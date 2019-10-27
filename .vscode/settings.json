@@ -1,0 +1,5 @@
+{
+    "prettier.spaceParenthesis": false,
+    "prettier.singleQuote": false,
+    "editor.tabSize": 2
+}

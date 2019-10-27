@@ -1,10 +1,11 @@
+import { API_KEY } from "../consts/api-key";
+import * as newsURL from "../consts/uri";
+
 export class FetchDataSevice {
-  fetchNews() {
-    var url =
-      "https://newsapi.org/v2/top-headlines?" +
-      "country=us&" +
-      "apiKey=95fcd3bbff6e48ed8e0eee2d40923176";
-    var req = new Request(url);
+  fetchNewsSources() {
+    const url = `${newsURL.NEWS_API_URL}/${newsURL.NEWS_URL_PATH.sources}?${newsURL.NEWS_URL_PARAMS.apiKey}=${API_KEY}`;
+    const req = new Request(url);
+    
     fetch(req).then(function(response) {
       console.log(response.json());
     });

@@ -1,4 +1,13 @@
-.hello {
-  color: red;
-  background: url('./icon.png');
+:root {
+  --color-blue: #076eaa;
+  --font: "Geomanist", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+  width: 100%;
+  margin: 0;
+  font-family: var(--font);
 }

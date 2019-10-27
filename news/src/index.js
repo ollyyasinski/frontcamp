@@ -1,26 +1,37 @@
 import _ from "lodash";
 
 import "./style.css";
-import Icon from "./icon.png";
-import { NewsPage } from "./news-page/news-page";
 
-function component() {
-  const element = document.createElement("div");
+import { HTMLService } from "./services/html-service";
+import { LandingPage } from "./containers/landing-page/landing-page";
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
-  element.classList.add("hello");
+const htmlService = new HTMLService();
+const bodyElement = document.querySelector("body");
+const landingPage = new LandingPage(htmlService).createLandingPage();
 
-  // Add the image to our existing div.
-  const myIcon = new Image();
-  myIcon.src = Icon;
+bodyElement.appendChild(landingPage);
 
-  element.appendChild(myIcon);
+// function component() {
+//   const element = document.createElement("div");
+//   const htmlService = new HTMLService();
 
-  const testPage = new NewsPage();
-  testPage.fetchData();
+//   // Lodash, currently included via a script, is required for this line to work
+//   // element.innerHTML = _.join(["Hello", "webpack"], " ");
+//   // element.classList.add("hello");
 
-  return element;
-}
+//   // // Add the image to our existing div.
+//   // const myIcon = new Image();
+//   // myIcon.src = Icon;
 
-document.body.appendChild(component());
+//   // element.appendChild(myIcon);
+
+//   const testPage = new NewsPage();
+//   testPage.fetchData();
+
+//   const header = new Header("name", false, htmlService).createHeader();
+//   element.appendChild(header);
+
+//   return element;
+// }
+
+// document.body.appendChild(component());
