@@ -1,0 +1,18 @@
+.channel-card {
+  height: 100px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  margin: 30px;
+  padding: 20px;
+}
+
+.channel-card__title {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.channel-card__description {
+  margin: 0;
+}
