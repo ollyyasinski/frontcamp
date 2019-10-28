@@ -1,9 +1,13 @@
+import css from "./news-channels.css";
+
 import { NewsChannelCard } from "./news-channel-card/news-channel-card";
 
 export class NewsChannelCards {
-  constructor(cards, htmlService) {
+  constructor(cards, htmlService, networkService, routingService) {
     this.cards = cards;
     this.htmlService = htmlService;
+    this.networkService = networkService;
+    this.routingService = routingService;
   }
 
   createNewsChannelCards() {
@@ -16,7 +20,9 @@ export class NewsChannelCards {
         card.name,
         card.description,
         card.url,
-        this.htmlService
+        this.htmlService,
+        this.networkService,
+        this.routingService
       ).createNewsChannelCard();
       channelCardsWrapper.appendChild(newCard);
     });

@@ -1,10 +1,18 @@
 import css from "./header.css";
 
 export class Header {
-  constructor(name, isHomeButtonDisplayed, htmlService) {
+  constructor(
+    name,
+    isBackButtonDisplayed,
+    htmlService,
+    networkService,
+    routingService
+  ) {
     this.name = name;
-    this.isHomeButtonDisplayed = isHomeButtonDisplayed;
+    this.isBackButtonDisplayed = isBackButtonDisplayed;
     this.htmlService = htmlService;
+    this.networkService = networkService;
+    this.routingService = routingService;
   }
 
   createHeader() {
@@ -13,12 +21,12 @@ export class Header {
     ]);
     const headerNameElement = this.createTitle(this.name);
 
-    headerElement.appendChild(headerNameElement);
-
-    if (this.isHomeButtonDisplayed) {
-      const homeButton = this.createHomeButton();
-      headerElement.appendChild(homeButton);
+    if (this.isBackButtonDisplayed) {
+      const backButton = this.createBackButton();
+      headerElement.appendChild(backButton);
     }
+
+    headerElement.appendChild(headerNameElement);
 
     return headerElement;
   }
@@ -30,14 +38,18 @@ export class Header {
     return title;
   }
 
-  createHomeButton() {
-    const homeButton = document.createElement("button");
+  createBackButton() {
+    const backButton = document.createElement("button");
 
-    homeButton.classList.add("header__home-button");
-    homeButton.addEventListener(() => {
-      console.log("test");
+    backButton.classList.add("header__back-button");
+    backButton.addEventListener("click", () => {
+      this.routingService.navigateToLandingPage(
+        this.htmlService,
+        this.networkService,
+        this.routingService
+      );
     });
 
-    return homeButton;
+    return backButton;
   }
 }

@@ -4,7 +4,9 @@ export class HTMLService {
   createSimpleElement(tag, classList) {
     const newElement = document.createElement(tag);
 
-    newElement.classList.add(...classList);
+    if (classList) {
+      newElement.classList.add(...classList);
+    }
 
     return newElement;
   }

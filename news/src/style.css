@@ -1,5 +1,6 @@
 :root {
-  --color-blue: #076eaa;
+  --color-blue: #0a6abe;
+  --color-dark-blue: #084b86;
   --font: "Geomanist", sans-serif;
 }
 
@@ -7,7 +8,12 @@ body {
   display: flex;
   flex-direction: column;
   height: 1000px;
+  background-color: #f1f4f9;
   width: 100%;
   margin: 0;
   font-family: var(--font);
+}
+
+h1 {
+  font-size: 40px;
 }

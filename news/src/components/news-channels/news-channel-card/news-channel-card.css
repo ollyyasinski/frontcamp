@@ -1,4 +1,60 @@
 .channel-card {
   display: flex;
   flex-direction: column;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 6px 16px 2px rgba(0, 0, 0, 0.2);
+}
+
+.channel-card__title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 80px;
+  padding: 0 20px;
+  border-radius: 3px 3px 0 0;
+  background: url("../../../assets/news-background.png") no-repeat center;
+  background-size: cover;
+}
+
+.channel-card__title {
+  font-size: 25px;
+  color: #fff;
+  text-shadow: 1px 0px black;
+}
+
+.channel-card__description {
+  height: 120px;
+  margin: 0;
+  padding: 20px;
+}
+
+.channel-card__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  height: 70px;
+  padding: 0 20px;
+  border-top: 1px solid var(--color-blue);
+}
+
+.channel-card__footer button {
+  height: 35px;
+  width: 130px;
+  background-color: var(--color-blue);
+  border: none;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.channel-card__footer button:hover {
+  background-color: #0a4c85;
 }

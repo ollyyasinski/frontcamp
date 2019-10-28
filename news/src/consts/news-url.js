@@ -4,5 +4,6 @@ export const NEWS_URL_PATH = {
 };
 export const NEWS_URL_PARAMS = {
   apiKey: "apiKey",
-  sources: "sources"
+  sources: "sources",
+  language: "language"
 };

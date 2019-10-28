@@ -2,36 +2,17 @@ import _ from "lodash";
 
 import "./style.css";
 
-import { HTMLService } from "./services/html-service";
 import { LandingPage } from "./containers/landing-page/landing-page";
+import { HTMLService } from "./services/html-service";
+import { NetworkService } from "./services/network-service";
+import { RoutingService } from "./services/routing-service";
 
 const htmlService = new HTMLService();
-const bodyElement = document.querySelector("body");
-const landingPage = new LandingPage(htmlService).createLandingPage();
+const networkService = new NetworkService();
+const routingService = new RoutingService();
 
-bodyElement.appendChild(landingPage);
-
-// function component() {
-//   const element = document.createElement("div");
-//   const htmlService = new HTMLService();
-
-//   // Lodash, currently included via a script, is required for this line to work
-//   // element.innerHTML = _.join(["Hello", "webpack"], " ");
-//   // element.classList.add("hello");
-
-//   // // Add the image to our existing div.
-//   // const myIcon = new Image();
-//   // myIcon.src = Icon;
-
-//   // element.appendChild(myIcon);
-
-//   const testPage = new NewsPage();
-//   testPage.fetchData();
-
-//   const header = new Header("name", false, htmlService).createHeader();
-//   element.appendChild(header);
-
-//   return element;
-// }
-
-// document.body.appendChild(component());
+new LandingPage(
+  htmlService,
+  networkService,
+  routingService
+).createPage();

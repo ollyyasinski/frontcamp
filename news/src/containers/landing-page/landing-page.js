@@ -1,19 +1,40 @@
+import css from "./landing-page.css";
+
 import { Header } from "../../components/header/header";
 import { NewsChannelCards } from "../../components/news-channels/news-channels";
 
+const bodyElement = document.querySelector("body");
+
 export class LandingPage {
-  constructor(htmlService) {
+  constructor(htmlService, networkService, routingService) {
     this.htmlService = htmlService;
+    this.networkService = networkService;
+    this.routingService = routingService;
   }
 
-  createLandingPage() {
+  createPage() {
+    let cards = localStorage.getItem("cards");
+    if (cards) {
+      this.createPageElements(JSON.parse(cards));
+    } else {
+      this.networkService.getSources().then(data => {
+        const cards = data.sources.map(source => ({
+          name: source.name,
+          description: source.description,
+          url: source.url
+        }));
+        localStorage.setItem("cards", JSON.stringify(cards));
+
+        this.createPageElements(cards);
+      });
+    }
+  }
+
+  createPageElements(cards) {
     const pageElement = this.htmlService.createSimpleElement("div", [
       "landing-page"
     ]);
-    const cards = [
-      { name: "test1", description: "test description 1", url: "test" },
-      { name: "test2", description: "test description 2", url: "test" }
-    ];
+
     const header = new Header(
       "News Channels",
       false,
@@ -22,12 +43,14 @@ export class LandingPage {
 
     const channelCards = new NewsChannelCards(
       cards,
-      this.htmlService
+      this.htmlService,
+      this.networkService,
+      this.routingService
     ).createNewsChannelCards();
 
     pageElement.appendChild(header);
     pageElement.appendChild(channelCards);
 
-    return pageElement;
+    bodyElement.appendChild(pageElement);
   }
 }
