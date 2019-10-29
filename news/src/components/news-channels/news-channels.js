@@ -19,7 +19,7 @@ export class NewsChannelCards {
       const newCard = new NewsChannelCard(
         card.name,
         card.description,
-        card.url,
+        card.id,
         this.htmlService,
         this.networkService,
         this.routingService

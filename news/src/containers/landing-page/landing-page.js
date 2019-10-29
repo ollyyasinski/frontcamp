@@ -14,18 +14,20 @@ export class LandingPage {
 
   createPage() {
     let cards = localStorage.getItem("cards");
+
     if (cards) {
       this.createPageElements(JSON.parse(cards));
     } else {
       this.networkService.getSources().then(data => {
-        const cards = data.sources.map(source => ({
+        const receivedCards = data.sources.map(source => ({
           name: source.name,
           description: source.description,
-          url: source.url
+          id: source.id
         }));
-        localStorage.setItem("cards", JSON.stringify(cards));
 
-        this.createPageElements(cards);
+        localStorage.setItem("cards", JSON.stringify(receivedCards));
+
+        this.createPageElements(receivedCards);
       });
     }
   }

@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 import "./style.css";
 
 import { LandingPage } from "./containers/landing-page/landing-page";
@@ -11,8 +9,4 @@ const htmlService = new HTMLService();
 const networkService = new NetworkService();
 const routingService = new RoutingService();
 
-new LandingPage(
-  htmlService,
-  networkService,
-  routingService
-).createPage();
+new LandingPage(htmlService, networkService, routingService).createPage();

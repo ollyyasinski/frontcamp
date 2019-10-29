@@ -4,14 +4,14 @@ export class NewsChannelCard {
   constructor(
     name,
     description,
-    url,
+    id,
     htmlService,
     networkService,
     routingService
   ) {
     this.name = name;
     this.description = description;
-    this.url = url;
+    this.id = id;
     this.htmlService = htmlService;
     this.networkService = networkService;
     this.routingService = routingService;
@@ -64,6 +64,7 @@ export class NewsChannelCard {
     goToDetailsButton.innerHTML = "Read more »";
     goToDetailsButton.addEventListener("click", () =>
       this.routingService.navigateToTopNewsPage(
+        this.id,
         this.name,
         this.htmlService,
         this.networkService,
