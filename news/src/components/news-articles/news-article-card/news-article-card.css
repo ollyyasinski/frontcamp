@@ -21,3 +21,25 @@
 .article-card:hover {
   box-shadow: 0 6px 16px 2px rgba(0, 0, 0, 0.2);
 }
+
+@media screen and (max-width: 900px) {
+  .article-card {
+    width: 500px;
+  }
+
+  .article-card__image {
+    max-height: 300px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .article-card {
+    width: 300px;
+  }
+
+  .article-card__image {
+    max-height: 150px;
+  }
+}
+

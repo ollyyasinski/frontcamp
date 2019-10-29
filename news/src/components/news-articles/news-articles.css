@@ -8,3 +8,11 @@
   padding: 50px;
   overflow-y: auto;
 }
+
+.news-api-link {
+  color: var(--color-blue);
+}
+
+.news-api-link:hover {
+  color: var(--color-dark-blue);
+}
