@@ -1,11 +1,13 @@
 import css from "./top-news-page.css";
 
 import { Header } from "../../components/header/header";
+import { NewsArticlesCards } from "../../components/news-articles/news-articles";
 
 const bodyElement = document.querySelector("body");
 
 export class TopNewsPage {
-  constructor(pageName, htmlService, networkService, routingService) {
+  constructor(sourceId, pageName, htmlService, networkService, routingService) {
+    this.sourceId = sourceId;
     this.pageName = pageName;
     this.htmlService = htmlService;
     this.networkService = networkService;
@@ -13,18 +15,19 @@ export class TopNewsPage {
   }
 
   createPage() {
-    // this.networkService.getSources().then(data => {
-    //   const cards = data.sources.map(source => ({
-    //     name: source.name,
-    //     description: source.description,
-    //     url: source.url
-    //   }));
+    this.networkService.getTopNewsBySource(this.sourceId).then(data => {
+      const receivedArticles = data.articles.map(article => ({
+        description: article.description,
+        title: article.title,
+        url: article.url,
+        urlToImage: article.urlToImage
+      }));
 
-    this.createPageElements();
-    // });
+      this.createPageElements(receivedArticles);
+    });
   }
 
-  createPageElements() {
+  createPageElements(articles) {
     const pageElement = this.htmlService.createSimpleElement("div", [
       "top-news-page"
     ]);
@@ -37,7 +40,15 @@ export class TopNewsPage {
       this.routingService
     ).createHeader();
 
+    const articleCards = new NewsArticlesCards(
+      articles,
+      this.htmlService,
+      this.networkService,
+      this.routingService
+    ).createNewsArticlesCards();
+
     pageElement.appendChild(header);
+    pageElement.appendChild(articleCards);
 
     bodyElement.appendChild(pageElement);
   }

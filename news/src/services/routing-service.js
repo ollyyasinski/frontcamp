@@ -1,5 +1,3 @@
-import * as routing from "../consts/routes";
-
 import { LandingPage } from "../containers/landing-page/landing-page";
 import { TopNewsPage } from "../containers/top-news-page/top-news-page";
 
