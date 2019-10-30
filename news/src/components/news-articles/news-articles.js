@@ -30,10 +30,6 @@ export class NewsArticlesCards {
       newsArticlesWrapper.appendChild(newArticle);
     });
 
-    newsArticlesWrapper.appendChild(attributionLink);
-
-    return newsArticlesWrapper;
-  }
 
   createAttributionLink() {
     const newsAPILink = this.htmlService.createSimpleElement("a", [
