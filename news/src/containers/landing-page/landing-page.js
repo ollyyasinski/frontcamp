@@ -2,6 +2,7 @@ import css from "./landing-page.css";
 
 import { Header } from "../../components/header/header";
 import { NewsChannelCards } from "../../components/news-channels/news-channels";
+import { NEWS_API_LINK } from "../../consts/news-url";
 
 const bodyElement = document.querySelector("body");
 
@@ -42,7 +43,7 @@ export class LandingPage {
       false,
       this.htmlService
     ).createHeader();
-
+    
     const channelCards = new NewsChannelCards(
       cards,
       this.htmlService,

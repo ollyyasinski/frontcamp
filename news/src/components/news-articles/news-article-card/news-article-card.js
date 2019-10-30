@@ -33,6 +33,10 @@ export class NewsArticleCard {
     articleElement.appendChild(articleTitle);
     articleElement.appendChild(articleDescription);
 
+    articleElement.addEventListener("click", () => {
+      window.location.href = this.url;
+    });
+
     return articleElement;
   }
 

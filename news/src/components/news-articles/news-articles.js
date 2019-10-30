@@ -1,6 +1,7 @@
 import css from "./news-articles.css";
 
 import { NewsArticleCard } from "./news-article-card/news-article-card";
+import { NEWS_API_LINK } from "../../consts/news-url";
 
 export class NewsArticlesCards {
   constructor(articles, htmlService, networkService, routingService) {
@@ -14,6 +15,7 @@ export class NewsArticlesCards {
     const newsArticlesWrapper = this.htmlService.createSimpleElement("div", [
       "news-articles"
     ]);
+    const attributionLink = this.createAttributionLink();
 
     this.articles.forEach(card => {
       const newArticle = new NewsArticleCard(
@@ -28,6 +30,14 @@ export class NewsArticlesCards {
       newsArticlesWrapper.appendChild(newArticle);
     });
 
-    return newsArticlesWrapper;
+
+  createAttributionLink() {
+    const newsAPILink = this.htmlService.createSimpleElement("a", [
+      "news-api-link"
+    ]);
+    newsAPILink.href = NEWS_API_LINK;
+    newsAPILink.innerHTML = "Powered by News API";
+
+    return newsAPILink;
   }
 }

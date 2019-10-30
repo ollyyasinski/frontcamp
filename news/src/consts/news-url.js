@@ -1,3 +1,4 @@
+export const NEWS_API_LINK = "https://newsapi.org/";
 export const NEWS_API_URL = "https://newsapi.org/v2/";
 export const NEWS_URL_PATH = {
   sources: "sources",
