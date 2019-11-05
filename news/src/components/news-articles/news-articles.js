@@ -29,7 +29,7 @@ export class NewsArticlesCards {
       ).createNewsArticleCard();
       newsArticlesWrapper.appendChild(newArticle);
     });
-
+  }
 
   createAttributionLink() {
     const newsAPILink = this.htmlService.createSimpleElement("a", [

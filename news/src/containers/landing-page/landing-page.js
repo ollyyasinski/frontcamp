@@ -3,6 +3,7 @@ import css from "./landing-page.css";
 import { Header } from "../../components/header/header";
 import { NewsChannelCards } from "../../components/news-channels/news-channels";
 import { NEWS_API_LINK } from "../../consts/news-url";
+import { ErrorPopup } from "../../components/error-popup/error-popup";
 
 const bodyElement = document.querySelector("body");
 
@@ -43,7 +44,7 @@ export class LandingPage {
       false,
       this.htmlService
     ).createHeader();
-    
+
     const channelCards = new NewsChannelCards(
       cards,
       this.htmlService,
@@ -51,8 +52,14 @@ export class LandingPage {
       this.routingService
     ).createNewsChannelCards();
 
+    const popup = new ErrorPopup(this.htmlService, {
+      code: 400,
+      message: "test"
+    }).createErrorPopup();
+
     pageElement.appendChild(header);
     pageElement.appendChild(channelCards);
+    pageElement.appendChild(popup);
 
     bodyElement.appendChild(pageElement);
   }
