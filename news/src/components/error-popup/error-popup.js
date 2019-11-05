@@ -2,7 +2,7 @@ import css from "./error-popup.css";
 
 import { ERROR_TITLE_TEXT, ERROR_DETAILS } from "../../consts/errors";
 
-export class ErrorPopup {
+export default class ErrorPopup {
   constructor(htmlService, error) {
     this.htmlService = htmlService;
     this.errorMessage = error.message;

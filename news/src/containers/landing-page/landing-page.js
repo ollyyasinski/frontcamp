@@ -52,14 +52,8 @@ export class LandingPage {
       this.routingService
     ).createNewsChannelCards();
 
-    const popup = new ErrorPopup(this.htmlService, {
-      code: 400,
-      message: "test"
-    }).createErrorPopup();
-
     pageElement.appendChild(header);
     pageElement.appendChild(channelCards);
-    pageElement.appendChild(popup);
 
     bodyElement.appendChild(pageElement);
   }
