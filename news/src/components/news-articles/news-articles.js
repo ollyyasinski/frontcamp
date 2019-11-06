@@ -15,6 +15,7 @@ export class NewsArticlesCards {
     const newsArticlesWrapper = this.htmlService.createSimpleElement("div", [
       "news-articles"
     ]);
+
     const attributionLink = this.createAttributionLink();
 
     this.articles.forEach(card => {
@@ -29,6 +30,10 @@ export class NewsArticlesCards {
       ).createNewsArticleCard();
       newsArticlesWrapper.appendChild(newArticle);
     });
+
+    newsArticlesWrapper.appendChild(attributionLink);
+
+    return newsArticlesWrapper;
   }
 
   createAttributionLink() {
