@@ -2,13 +2,17 @@ import css from "./top-news-page.css";
 
 import { Header } from "../../components/header/header";
 import { NewsArticlesCards } from "../../components/news-articles/news-articles";
+import { state, store } from "../../store/news-reducer";
+import { LoadArticles } from "../../store/news-actions";
 
 const bodyElement = document.querySelector("body");
 
 export class TopNewsPage {
-  constructor(sourceId, pageName, htmlService, networkService, routingService) {
-    this.sourceId = sourceId;
-    this.pageName = pageName;
+  constructor(htmlService, networkService, routingService) {
+    this.sourceId = state.selectedSourceID;
+    this.pageName = state.sources.find(
+      source => source.id === this.sourceId
+    ).name;
     this.htmlService = htmlService;
     this.networkService = networkService;
     this.routingService = routingService;
@@ -16,14 +20,9 @@ export class TopNewsPage {
 
   createPage() {
     this.networkService.getTopNewsBySource(this.sourceId).then(data => {
-      const receivedArticles = data.articles.map(article => ({
-        description: article.description,
-        title: article.title,
-        url: article.url,
-        urlToImage: article.urlToImage
-      }));
+      store.dispatchAction(new LoadArticles(data.articles));
 
-      this.createPageElements(receivedArticles);
+      this.createPageElements(state.articles);
     });
   }
 
@@ -41,7 +40,6 @@ export class TopNewsPage {
     ).createHeader();
 
     const articleCards = new NewsArticlesCards(
-      articles,
       this.htmlService,
       this.networkService,
       this.routingService

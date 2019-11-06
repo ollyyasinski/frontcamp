@@ -2,10 +2,12 @@ import css from "./news-articles.css";
 
 import { NewsArticleCard } from "./news-article-card/news-article-card";
 import { NEWS_API_LINK } from "../../consts/news-url";
+import { state, store } from "../../store/news-reducer";
+import { SelectArticle } from "../../store/news-actions";
 
 export class NewsArticlesCards {
-  constructor(articles, htmlService, networkService, routingService) {
-    this.articles = articles;
+  constructor(htmlService, networkService, routingService) {
+    this.articles = state.articles;
     this.htmlService = htmlService;
     this.networkService = networkService;
     this.routingService = routingService;
@@ -20,14 +22,13 @@ export class NewsArticlesCards {
 
     this.articles.forEach(card => {
       const newArticle = new NewsArticleCard(
-        card.description,
-        card.title,
-        card.url,
-        card.urlToImage,
+        card.id,
         this.htmlService,
         this.networkService,
         this.routingService
       ).createNewsArticleCard();
+
+      store.dispatchAction(new SelectArticle(card.id));
       newsArticlesWrapper.appendChild(newArticle);
     });
 

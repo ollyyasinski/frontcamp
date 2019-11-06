@@ -1,4 +1,4 @@
-import { getErrorText, ERROR_TYPES, UNKNOWN_ERROR } from "../consts/errors";
+import { ERROR_TYPES, UNKNOWN_ERROR } from "../consts/errors";
 
 export class ErrorHandlingService {
   constructor(errorType) {

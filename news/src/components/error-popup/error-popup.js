@@ -73,16 +73,16 @@ export default class ErrorPopup {
 
     const errorTextLine1Element = this.htmlService.createSimpleElement("p");
     const errorTextLine2Element = this.htmlService.createSimpleElement("span");
-    const blodTextSpan = this.htmlService.createSimpleElement("span", [
+    const boldTextSpan = this.htmlService.createSimpleElement("span", [
       "error-popup__details"
     ]);
 
     errorTextLine1Element.innerHTML = ERROR_TITLE_TEXT;
-    blodTextSpan.innerHTML = ERROR_DETAILS + " ";
+    boldTextSpan.innerHTML = ERROR_DETAILS + " ";
     errorTextLine2Element.innerHTML = this.errorMessage;
 
     errorTextWrapperElement.appendChild(errorTextLine1Element);
-    errorTextWrapperElement.appendChild(blodTextSpan);
+    errorTextWrapperElement.appendChild(boldTextSpan);
     errorTextWrapperElement.appendChild(errorTextLine2Element);
 
     return errorTextWrapperElement;
