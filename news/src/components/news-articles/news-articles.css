@@ -1,0 +1,18 @@
+.news-articles {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  grid-gap: 30px;
+  align-items: center;
+  padding: 50px;
+  overflow-y: auto;
+}
+
+.news-api-link {
+  color: var(--color-blue);
+}
+
+.news-api-link:hover {
+  color: var(--color-dark-blue);
+}
