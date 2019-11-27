@@ -1,17 +1,11 @@
 import css from "./news-channel-card.css";
+import { store, state } from "../../../store/news-reducer";
+import { SelectSource } from "../../../store/news-actions";
 
 export class NewsChannelCard {
-  constructor(
-    name,
-    description,
-    id,
-    htmlService,
-    networkService,
-    routingService
-  ) {
-    this.name = name;
-    this.description = description;
+  constructor(id, htmlService, networkService, routingService) {
     this.id = id;
+    this.selectedSource = state.sources.find(source => source.id === this.id);
     this.htmlService = htmlService;
     this.networkService = networkService;
     this.routingService = routingService;
@@ -41,7 +35,7 @@ export class NewsChannelCard {
     ]);
 
     cardTitleWrapper.appendChild(cardTitle);
-    cardTitle.innerHTML = this.name;
+    cardTitle.innerHTML = this.selectedSource.name;
 
     return cardTitleWrapper;
   }
@@ -50,7 +44,7 @@ export class NewsChannelCard {
     const cardDescription = this.htmlService.createSimpleElement("p", [
       "channel-card__description"
     ]);
-    cardDescription.innerHTML = this.description;
+    cardDescription.innerHTML = this.selectedSource.description;
 
     return cardDescription;
   }
@@ -62,15 +56,15 @@ export class NewsChannelCard {
     const goToDetailsButton = this.htmlService.createSimpleElement("button");
 
     goToDetailsButton.innerHTML = "Read more »";
-    goToDetailsButton.addEventListener("click", () =>
+    goToDetailsButton.addEventListener("click", () => {
+      store.dispatchAction(new SelectSource(this.id));
+
       this.routingService.navigateToTopNewsPage(
-        this.id,
-        this.name,
         this.htmlService,
         this.networkService,
         this.routingService
-      )
-    );
+      );
+    });
     cardFooter.appendChild(goToDetailsButton);
 
     return cardFooter;

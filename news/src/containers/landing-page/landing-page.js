@@ -2,7 +2,8 @@ import css from "./landing-page.css";
 
 import { Header } from "../../components/header/header";
 import { NewsChannelCards } from "../../components/news-channels/news-channels";
-import { NEWS_API_LINK } from "../../consts/news-url";
+import { store } from "../../store/news-reducer";
+import { LoadSources } from "../../store/news-actions";
 
 const bodyElement = document.querySelector("body");
 
@@ -14,10 +15,11 @@ export class LandingPage {
   }
 
   createPage() {
-    let cards = localStorage.getItem("cards");
+    let cards = JSON.parse(localStorage.getItem("cards"));
 
     if (cards) {
-      this.createPageElements(JSON.parse(cards));
+      store.dispatchAction(new LoadSources(cards));
+      this.createPageElements();
     } else {
       this.networkService.getSources().then(data => {
         const receivedCards = data.sources.map(source => ({
@@ -26,14 +28,15 @@ export class LandingPage {
           id: source.id
         }));
 
+        store.dispatchAction(new LoadSources(receivedCards));
         localStorage.setItem("cards", JSON.stringify(receivedCards));
 
-        this.createPageElements(receivedCards);
+        this.createPageElements();
       });
     }
   }
 
-  createPageElements(cards) {
+  createPageElements() {
     const pageElement = this.htmlService.createSimpleElement("div", [
       "landing-page"
     ]);
@@ -43,9 +46,8 @@ export class LandingPage {
       false,
       this.htmlService
     ).createHeader();
-    
+
     const channelCards = new NewsChannelCards(
-      cards,
       this.htmlService,
       this.networkService,
       this.routingService

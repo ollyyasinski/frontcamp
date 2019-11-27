@@ -1,10 +1,11 @@
 import css from "./news-channels.css";
 
 import { NewsChannelCard } from "./news-channel-card/news-channel-card";
+import { state } from "../../store/news-reducer";
 
 export class NewsChannelCards {
-  constructor(cards, htmlService, networkService, routingService) {
-    this.cards = cards;
+  constructor(htmlService, networkService, routingService) {
+    this.cards = state.sources;
     this.htmlService = htmlService;
     this.networkService = networkService;
     this.routingService = routingService;
@@ -17,8 +18,6 @@ export class NewsChannelCards {
 
     this.cards.forEach(card => {
       const newCard = new NewsChannelCard(
-        card.name,
-        card.description,
         card.id,
         this.htmlService,
         this.networkService,
