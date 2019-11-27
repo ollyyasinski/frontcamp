@@ -1,0 +1,22 @@
+{"message":"Request method: GET , url: /news/2","level":"info","timestamp":"2019-11-27 15:30:39"}
+{"message":"Request method: GET , url: /news/2","level":"info","timestamp":"2019-11-27 15:38:08"}
+{"message":"Request method: GET , url: /news/2","level":"info","timestamp":"2019-11-27 15:44:15"}
+{"message":"Request method: GET , url: /news/2","level":"info","timestamp":"2019-11-27 15:50:14"}
+{"message":"Request method: GET , url: /news/2","level":"info","timestamp":"2019-11-27 16:03:24"}
+{"message":"400 - ID is not valid - /news/77 - GET - ::1","level":"error","timestamp":"2019-11-27 16:03:29"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-11-27 16:07:57"}
+{"message":"Request method: GET , url: /news/1","level":"info","timestamp":"2019-11-27 16:08:07"}
+{"message":"400 - ID is not valid - /news/98 - GET - ::1","level":"error","timestamp":"2019-11-27 16:08:11"}
+{"message":"500 - params is not defined - /news/5 - PUT - ::1","level":"error","timestamp":"2019-11-27 16:08:31"}
+{"message":"500 - params is not defined - /news/5 - PUT - ::1","level":"error","timestamp":"2019-11-27 16:08:57"}
+{"message":"500 - params is not defined - /news/1 - PUT - ::1","level":"error","timestamp":"2019-11-27 16:09:12"}
+{"message":"500 - params is not defined - /news/1 - PUT - ::1","level":"error","timestamp":"2019-11-27 16:09:16"}
+{"message":"Request method: PUT , url: /news/1","level":"info","timestamp":"2019-11-27 16:09:50"}
+{"message":"Request method: POST , url: /news","level":"info","timestamp":"2019-11-27 16:10:05"}
+{"message":"Request method: POST , url: /news","level":"info","timestamp":"2019-11-27 16:10:15"}
+{"message":"Request method: POST , url: /news","level":"info","timestamp":"2019-11-27 16:10:26"}
+{"message":"Request method: POST , url: /news","level":"info","timestamp":"2019-11-27 16:10:56"}
+{"message":"400 - Request body is empty - /news - POST - ::1","level":"error","timestamp":"2019-11-27 16:12:53"}
+{"message":"Request method: POST , url: /news","level":"info","timestamp":"2019-11-27 16:12:58"}
+{"message":"Request method: DELETE , url: /news/2","level":"info","timestamp":"2019-11-27 16:13:30"}
+{"message":"Request method: DELETE , url: /news/9","level":"info","timestamp":"2019-11-27 16:13:39"}
