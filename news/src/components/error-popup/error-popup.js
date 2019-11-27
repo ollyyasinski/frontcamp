@@ -78,7 +78,7 @@ export default class ErrorPopup {
     ]);
 
     errorTextLine1Element.innerHTML = ERROR_TITLE_TEXT;
-    boldTextSpan.innerHTML = ERROR_DETAILS + " ";
+    boldTextSpan.innerHTML = `${ERROR_DETAILS} `;
     errorTextLine2Element.innerHTML = this.errorMessage;
 
     errorTextWrapperElement.appendChild(errorTextLine1Element);
