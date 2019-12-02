@@ -5,3 +5,12 @@
 {"message":"500 - params is not defined - /news/1 - PUT - ::1","level":"error","timestamp":"2019-11-27 16:09:12"}
 {"message":"500 - params is not defined - /news/1 - PUT - ::1","level":"error","timestamp":"2019-11-27 16:09:16"}
 {"message":"400 - Request body is empty - /news - POST - ::1","level":"error","timestamp":"2019-11-27 16:12:53"}
+{"message":"500 - News.save is not a function - /news - POST - ::1","level":"error","timestamp":"2019-12-03 00:17:24"}
+{"message":"Cast to ObjectId failed for value \"{ ID: '3' }\" at path \"_id\" for model \"news\"","name":"CastError","stringValue":"\"{ ID: '3' }\"","kind":"ObjectId","value":{"ID":"3"},"path":"_id","level":"error","timestamp":"2019-12-03 00:42:27"}
+{"message":"Cast to ObjectId failed for value \"{ ID: '3' }\" at path \"_id\" for model \"news\"","name":"CastError","stringValue":"\"{ ID: '3' }\"","kind":"ObjectId","value":{"ID":"3"},"path":"_id","level":"error","timestamp":"2019-12-03 00:43:12"}
+{"message":"Cast to ObjectId failed for value \"{ ID: '3' }\" at path \"_id\" for model \"news\"","name":"CastError","stringValue":"\"{ ID: '3' }\"","kind":"ObjectId","value":{"ID":"3"},"path":"_id","level":"error","timestamp":"2019-12-03 00:44:09"}
+{"message":"500 - News.findAndUpdate is not a function - /news/3 - PUT - ::1","level":"error","timestamp":"2019-12-03 00:47:27"}
+{"message":"500 - News.useFindAndModify is not a function - /news/8 - PUT - ::1","level":"error","timestamp":"2019-12-03 00:52:20"}
+{"message":"500 - News.useFindAndModify is not a function - /news/8 - PUT - ::1","level":"error","timestamp":"2019-12-03 00:52:47"}
+{"message":"400 - Request body is empty - /news/8 - PUT - ::1","level":"error","timestamp":"2019-12-03 00:53:57"}
+{"message":"500 - Unexpected token s in JSON at position 0 - /news/8 - PUT - ::1","level":"error","timestamp":"2019-12-03 00:54:13"}

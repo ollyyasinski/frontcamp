@@ -1,6 +1,7 @@
 const logger = require("../logger");
 const errors = require("../consts/errors");
-let news = require("../consts/news.json");
+
+const News = require("../models/newsModel");
 
 const postNews = (request, response, next) => {
   if (!Object.keys(request.body).length) {
@@ -13,8 +14,13 @@ const postNews = (request, response, next) => {
     `Request method: ${request.method} , url: ${request.originalUrl}`
   );
 
-  news.push(request.body);
-  response.send(news);
+  const newNewsItem = new News(request.body);
+
+  newNewsItem.save(err =>
+    err
+      ? err.status(err.status).message(err.message)
+      : response.send(newNewsItem)
+  );
 };
 
 module.exports = postNews;

@@ -1,12 +1,15 @@
 const logger = require("../logger");
-let news = require("../consts/news.json");
+
+const News = require("../models/newsModel");
 
 const getNews = (request, response) => {
   logger.info(
     `Request method: ${request.method} , url: ${request.originalUrl}`
   );
 
-  response.send(news);
+  News.find({}, (err, news) =>
+    err ? err.status(err.status).message(err.message) : response.send(news)
+  );
 };
 
 module.exports = getNews;

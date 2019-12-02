@@ -1,6 +1,7 @@
 const logger = require("../logger");
 const errors = require("../consts/errors");
-let news = require("../consts/news.json");
+
+const News = require("../models/newsModel");
 
 const deleteNewsByID = (request, response, next) => {
   if (!request.params.id) {
@@ -13,9 +14,9 @@ const deleteNewsByID = (request, response, next) => {
     `Request method: ${request.method} , url: ${request.originalUrl}`
   );
 
-  news = news.filter(newsItem => newsItem.ID !== request.params.id);
-
-  response.send(news);
+  News.findOneAndDelete({ ID: request.params.id }, (err, newsItem) =>
+    err ? err.status(err.status).message(err.message) : response.send(newsItem)
+  );
 };
 
 module.exports = deleteNewsByID;
