@@ -11,17 +11,9 @@ app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(
-  session({
-    secret: "passport-tutorial",
-    cookie: { maxAge: 60000 },
-    resave: false,
-    saveUninitialized: false
-  })
-);
-
 require("./models/user-model");
 require("./authentication/local-strategy");
+require("./authentication/facebook-strategy");
 
 app.use(require("./routes"));
 

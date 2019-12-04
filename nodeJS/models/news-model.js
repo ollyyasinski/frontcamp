@@ -18,6 +18,7 @@ News.create(newsJSON, err => {
   if (err) {
     logger.error(err);
   }
+  logger.info("news are successfully added to collection")
 });
 
 module.exports = News;
