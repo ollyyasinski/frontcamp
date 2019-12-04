@@ -1,6 +1,6 @@
 const logger = require("../logger");
 
-const News = require("../models/newsModel");
+const News = require("../models/news-model");
 
 const getNews = (request, response) => {
   logger.info(
@@ -8,7 +8,7 @@ const getNews = (request, response) => {
   );
 
   News.find({}, (err, news) =>
-    err ? err.status(err.status).message(err.message) : response.send(news)
+    err ? err.status(err.sstatus).message(err.message) : response.send(news)
   );
 };
 

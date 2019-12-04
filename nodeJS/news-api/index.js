@@ -1,8 +1,8 @@
-const getNews = require("./getNews");
-const getNewsByID = require("./getNewsByID");
-const postNews = require("./postNews");
-const putNews = require("./putNews");
-const deleteNewsByID = require("./deleteNewsByID");
+const getNews = require("./get-news");
+const getNewsByID = require("./get-news-by-ID");
+const postNews = require("./post-news");
+const putNews = require("./put-news");
+const deleteNewsByID = require("./delete-news-by-ID");
 
 const newsAPI = {
   getNews: getNews,

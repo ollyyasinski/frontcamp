@@ -1,12 +1,12 @@
 const logger = require("../logger");
 const errors = require("../consts/errors");
 
-const News = require("../models/newsModel");
+const News = require("../models/news-model");
 
 const deleteNewsByID = (request, response, next) => {
   if (!request.params.id) {
     const error = new Error(errors.withoutID.message);
-    error.httpStatusCode = errors.withoutID.status;
+    error.httpStatusCodes = errors.withoutID.status;
     return next(error);
   }
 
