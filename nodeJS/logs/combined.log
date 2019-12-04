@@ -112,3 +112,73 @@
 {"message":"Request method: PUT , url: /news/dfhg","level":"info","timestamp":"2019-12-03 00:53:29"}
 {"message":"400 - Request body is empty - /news/8 - PUT - ::1","level":"error","timestamp":"2019-12-03 00:53:57"}
 {"message":"500 - Unexpected token s in JSON at position 0 - /news/8 - PUT - ::1","level":"error","timestamp":"2019-12-03 00:54:13"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:08:25"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:08:45"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:08:52"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:09:10"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:09:16"}
+{"message":"Request method: GET , url: /news/1","level":"info","timestamp":"2019-12-04 12:09:34"}
+{"message":"Request method: GET , url: /news/1","level":"info","timestamp":"2019-12-04 12:10:01"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:11:08"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:11:26"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:12:54"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:17:52"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:18:51"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:19:49"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:20:39"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 12:22:39"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 13:03:52"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 13:14:41"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 13:15:21"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 13:15:26"}
+{"message":"500 - Unknown authentication strategy \"local\" - /news/3 - PUT - ::1","level":"error","timestamp":"2019-12-04 13:15:40"}
+{"message":"500 - Unknown authentication strategy \"local\" - /news/3 - PUT - ::1","level":"error","timestamp":"2019-12-04 13:16:16"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 13:23:13"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 13:23:35"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 13:23:39"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 13:24:16"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 13:24:18"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 13:27:16"}
+{"message":"Request method: GET , url: /news/3","level":"info","timestamp":"2019-12-04 13:27:29"}
+{"message":"Request method: PUT , url: /news/3","level":"info","timestamp":"2019-12-04 13:27:44"}
+{"message":"500 - user is not defined - /login - POST - ::1","level":"error","timestamp":"2019-12-04 13:44:57"}
+{"message":"500 - Failed to serialize user into session - /login - POST - ::1","level":"error","timestamp":"2019-12-04 14:02:26"}
+{"message":"500 - res.statusCode is not a function - /login - POST - ::1","level":"error","timestamp":"2019-12-04 14:43:33"}
+{"message":"500 - res.status is not a function - /login - POST - ::1","level":"error","timestamp":"2019-12-04 14:43:58"}
+{"message":"500 - res.send is not a function - /login - POST - ::1","level":"error","timestamp":"2019-12-04 14:45:27"}
+{"message":"500 - Unknown authentication strategy \"local\" - /login - POST - ::1","level":"error","timestamp":"2019-12-04 15:23:22"}
+{"message":"500 - No authorization token was found - /api/users/current - GET - ::1","level":"error","timestamp":"2019-12-04 16:10:49"}
+{"message":"500 - No authorization token was found - /api/users/current - GET - ::1","level":"error","timestamp":"2019-12-04 16:11:06"}
+{"message":"500 - No authorization token was found - /api/users/current - GET - ::1","level":"error","timestamp":"2019-12-04 16:11:19"}
+{"message":"500 - No authorization token was found - /api/users/current - GET - ::1","level":"error","timestamp":"2019-12-04 16:11:49"}
+{"message":"500 - No authorization token was found - /api/users/current - GET - ::1","level":"error","timestamp":"2019-12-04 16:12:03"}
+{"message":"500 - No authorization token was found - /api/users/current - GET - ::1","level":"error","timestamp":"2019-12-04 16:12:36"}
+{"message":"500 - No authorization token was found - /api/users/current - GET - ::1","level":"error","timestamp":"2019-12-04 16:15:31"}
+{"message":"500 - No authorization token was found - /api/users/current - GET - ::1","level":"error","timestamp":"2019-12-04 16:15:48"}
+{"message":"Request method: PUT , url: /news/3","level":"info","timestamp":"2019-12-04 17:08:39"}
+{"message":"Request method: PUT , url: /news/3","level":"info","timestamp":"2019-12-04 17:08:49"}
+{"message":"500 - No authorization token was found - /api/users/news/3 - PUT - ::1","level":"error","timestamp":"2019-12-04 17:19:07"}
+{"message":"500 - req is not defined - /api/users/news/3 - PUT - ::1","level":"error","timestamp":"2019-12-04 17:19:18"}
+{"message":"500 - logger is not defined - /api/users/news/3 - PUT - ::1","level":"error","timestamp":"2019-12-04 17:22:18"}
+{"message":"500 - logger is not defined - /api/users/news/3 - PUT - ::1","level":"error","timestamp":"2019-12-04 17:22:35"}
+{"message":"Request method: PUT , url: /api/users/news/3","level":"info","timestamp":"2019-12-04 17:23:54"}
+{"message":"Request method: PUT , url: /news/3","level":"info","timestamp":"2019-12-04 17:37:22"}
+{"message":"Request method: PUT , url: /news/3","level":"info","timestamp":"2019-12-04 17:37:28"}
+{"message":"500 - No authorization token was found - /news/3 - PUT - ::1","level":"error","timestamp":"2019-12-04 17:37:31"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 17:40:58"}
+{"message":"500 - No authorization token was found - /news/3 - DELETE - ::1","level":"error","timestamp":"2019-12-04 17:41:08"}
+{"message":"Request method: DELETE , url: /news/3","level":"info","timestamp":"2019-12-04 17:41:28"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 17:41:32"}
+{"message":"Request method: DELETE , url: /news/3","level":"info","timestamp":"2019-12-04 17:44:07"}
+{"message":"Request method: DELETE , url: /news/3","level":"info","timestamp":"2019-12-04 17:44:34"}
+{"message":"500 - No authorization token was found - /news/3 - DELETE - ::1","level":"error","timestamp":"2019-12-04 17:44:37"}
+{"message":"500 - status is not defined - /users/login - POST - ::1","level":"error","timestamp":"2019-12-04 18:00:23"}
+{"message":"500 - status is not defined - /users/login - POST - ::1","level":"error","timestamp":"2019-12-04 18:01:16"}
+{"message":"500 - status is not defined - /users/login - POST - ::1","level":"error","timestamp":"2019-12-04 18:02:59"}
+{"message":"500 - res.status(...).statusMessage is not a function - /users/login - POST - ::1","level":"error","timestamp":"2019-12-04 18:06:36"}
+{"message":"500 - No authorization token was found - /news/3 - DELETE - ::1","level":"error","timestamp":"2019-12-04 18:13:16"}
+{"message":"Request method: DELETE , url: /news/3","level":"info","timestamp":"2019-12-04 18:13:25"}
+{"message":"Request method: GET , url: /news","level":"info","timestamp":"2019-12-04 18:13:28"}
+{"message":"500 - No authorization token was found - /users/current - GET - ::1","level":"error","timestamp":"2019-12-04 18:14:33"}
+{"message":"500 - passport is not defined - /users/login - POST - ::1","level":"error","timestamp":"2019-12-04 18:15:12"}
+{"message":"500 - passport is not defined - /users/login - POST - ::1","level":"error","timestamp":"2019-12-04 18:15:32"}

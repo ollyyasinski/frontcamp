@@ -1,7 +1,7 @@
-const logger = require("../logger");
-const errors = require("../consts/errors");
+const logger = require("../../../logger");
+const errors = require("../../../consts/errors");
 
-const News = require("../models/news-model");
+const News = require("../../../models/news-model");
 
 const deleteNewsByID = (request, response, next) => {
   if (!request.params.id) {

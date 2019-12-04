@@ -1,7 +1,7 @@
-const logger = require("../logger");
-const errors = require("../consts/errors");
+const logger = require("../../../logger");
+const errors = require("../../../consts/errors");
 
-const News = require("../models/news-model");
+const News = require("../../../models/news-model");
 
 const postNews = (request, response, next) => {
   if (!Object.keys(request.body).length) {
@@ -9,7 +9,7 @@ const postNews = (request, response, next) => {
     error.httpStatusCode = errors.withoutBody.status;
     return next(error);
   }
-s
+
   logger.info(
     `Request method: ${request.method} , url: ${request.originalUrl}`
   );

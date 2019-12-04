@@ -1,7 +1,7 @@
-const logger = require("../logger");
-const errors = require("../consts/errors");
+const logger = require("../../../logger");
+const errors = require("../../../consts/errors");
 
-const News = require("../models/news-model");
+const News = require("../../../models/news-model");
 
 const putNews = (request, response, next) => {
   if (!Object.keys(request.body).length) {

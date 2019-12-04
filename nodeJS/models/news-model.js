@@ -12,6 +12,8 @@ const collectionName = "news";
 const newsSchema = mongoose.Schema(schema);
 const News = mongoose.model(collectionName, newsSchema);
 
+News.deleteMany({}, () => console.log("collection cleared"));
+
 News.create(newsJSON, err => {
   if (err) {
     logger.error(err);

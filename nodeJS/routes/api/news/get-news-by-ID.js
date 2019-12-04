@@ -1,6 +1,6 @@
-const logger = require("../logger");
+const logger = require("../../../logger");
 
-const News = require("../models/news-model");
+const News = require("../../../models/news-model");
 
 const getNewsByID = (request, response, next) => {
   logger.info(

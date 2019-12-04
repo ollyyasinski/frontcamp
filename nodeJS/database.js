@@ -9,8 +9,8 @@ mongoose.connect(dbPath, {
 
 const db = mongoose.connection;
 
-db.on("error", () => {
-  console.log("> error occurred from the database");
+db.on("error", err => {
+  console.log("> error occurred from the database", err);
 });
 db.once("open", () => {
   console.log("> successfully opened the database");
