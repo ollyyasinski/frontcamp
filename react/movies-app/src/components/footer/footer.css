@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  background-color: var(--color-medium-grey);
+  color: var(--color-pink);
+  font-size: 20px;
+}
+
+.footer p span {
+  font-weight: 700;
+}

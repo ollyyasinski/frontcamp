@@ -1,0 +1,17 @@
+.movies-list-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  padding: 0 100px;
+  background-color: var(--color-medium-grey);
+}
+
+h4 {
+  margin: 0;
+  color: var(--color-white);
+  font-weight: 800;
+}
