@@ -9,6 +9,7 @@ const MoviesList = ({
   movies,
   title,
   activeTab,
+  tabs,
   selectFirstOption,
   selectSecondOption
 }) => {
@@ -31,6 +32,7 @@ const MoviesList = ({
       <MoviesListHeader
         title={title}
         activeTab={activeTab}
+        tabs={tabs}
         selectFirstOption={selectFirstOption}
         selectSecondOption={selectSecondOption}
       />
@@ -43,7 +45,10 @@ MoviesList.propTypes = {
   movies: PropTypes.array,
   title: PropTypes.string,
   activeTab: PropTypes.string,
-  onClick: PropTypes.func,
+  tabs: PropTypes.shape({
+    firstOption: PropTypes.string,
+    secondOption: PropTypes.string
+  }),
   selectFirstOption: PropTypes.func,
   selectSecondOption: PropTypes.func
 };

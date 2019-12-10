@@ -1,20 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./movies-list-header.css";
-import Toggle from "../../toggle/toggle";
+import "./search.css";
+import Toggle from "../toggle/toggle";
 
-const MoviesListHeader = ({
-  title,
-  activeTab,
-  tabs,
-  selectFirstOption,
-  selectSecondOption
-}) => (
-  <div className="movies-list-header">
-    <h4>{title}</h4>
+const Search = ({ activeTab, tabs, selectFirstOption, selectSecondOption }) => (
+  <div className="search__wrapper">
+    <form>
+      <input className="search__input" placeholder="Search"></input>
+      <button>SEARCH</button>
+    </form>
     <Toggle
-      title={"SORT BY"}
+      title={"SEARCH BY"}
       activeTab={activeTab}
       tabs={tabs}
       selectFirstOption={selectFirstOption}
@@ -23,8 +20,7 @@ const MoviesListHeader = ({
   </div>
 );
 
-MoviesListHeader.propTypes = {
-  title: PropTypes.string,
+Search.propTypes = {
   activeTab: PropTypes.string,
   tabs: PropTypes.shape({
     firstOption: PropTypes.string,
@@ -34,4 +30,4 @@ MoviesListHeader.propTypes = {
   selectSecondOption: PropTypes.func
 };
 
-export default MoviesListHeader;
+export default Search;

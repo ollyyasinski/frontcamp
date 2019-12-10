@@ -1,4 +1,4 @@
 export const SORTING_TYPES = {
-  releaseDate: "RELEASE DATE",
-  rating: "RATING"
+  firstOption: "RELEASE DATE",
+  secondOption: "RATING"
 };

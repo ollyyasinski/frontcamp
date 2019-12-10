@@ -3,13 +3,10 @@ import PropTypes from "prop-types";
 
 import "./toggle.css";
 
-import { SORTING_TYPES } from "../../consts/sorting-types";
-
 const Toggle = ({
   title,
-  firstOption,
-  secondOption,
   activeTab,
+  tabs,
   selectFirstOption,
   selectSecondOption
 }) => (
@@ -18,15 +15,15 @@ const Toggle = ({
     <div className="toggle">
       <div
         onClick={selectFirstOption}
-        className={activeTab === SORTING_TYPES.releaseDate ? "selected" : null}
+        className={activeTab === tabs.firstOption ? "selected" : null}
       >
-        {firstOption}
+        {tabs.firstOption}
       </div>
       <div
         onClick={selectSecondOption}
-        className={activeTab === SORTING_TYPES.rating ? "selected" : null}
+        className={activeTab === tabs.secondOption ? "selected" : null}
       >
-        {secondOption}
+        {tabs.secondOption}
       </div>
     </div>
   </div>
@@ -34,9 +31,11 @@ const Toggle = ({
 
 Toggle.propsTypes = {
   title: PropTypes.string,
-  firstOption: PropTypes.string,
-  secondOption: PropTypes.string,
   activeTab: PropTypes.string,
+  tabs: PropTypes.shape({
+    firstOption: PropTypes.string,
+    secondOption: PropTypes.string
+  }),
   selectFirstOption: PropTypes.func,
   selectSecondOption: PropTypes.func
 };

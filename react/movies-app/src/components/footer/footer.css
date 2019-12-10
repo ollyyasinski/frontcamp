@@ -6,10 +6,4 @@
   height: 70px;
   width: 100%;
   background-color: var(--color-medium-grey);
-  color: var(--color-light-red);
-  font-size: 20px;
-}
-
-.footer p span {
-  font-weight: 700;
 }
