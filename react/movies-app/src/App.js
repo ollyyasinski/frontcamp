@@ -1,10 +1,11 @@
 import React from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 
-import MoviesList from "./components/movies-list/movies-list";
-import Footer from "./components/footer/footer";
+// import MoviesList from "./components/movies-list/movies-list";
+// import Footer from "./components/footer/footer";
 import "./App.css";
-import response from "./data-mocks/get-movies-response.json";
+import SearchPage from "./containers/search-page/search-page";
+// import response from "./data-mocks/get-movies-response.json";
 
 function App() {
   return (
@@ -24,11 +25,7 @@ function App() {
         </a>
       </header> */}
 
-      <MoviesList
-        movies={response.data}
-        title={`${response.data.length} movie found`}
-      />
-      <Footer />
+      <SearchPage />
     </div>
   );
 }

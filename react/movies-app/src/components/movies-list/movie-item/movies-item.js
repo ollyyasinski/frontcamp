@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 
 import "./movies-item.css";
 
-const MovieItem = props => (
+const MovieItem = ({ imgSource, title, year, genre }) => (
   <div className="movie-item">
-    <img src={props.imgSource} alt="movie poster"></img>
+    <img src={imgSource} alt="movie poster"></img>
     <div className="movie-item__details-wrapper">
       <div className="movie-item__title-wrapper">
-        <h2>{props.title}</h2>
-        <div className="movie-item__year">{props.year}</div>
+        <h2>{title}</h2>
+        <div className="movie-item__year">{year}</div>
       </div>
-      <p>{props.genre}</p>
+      <p>{genre}</p>
     </div>
   </div>
 );

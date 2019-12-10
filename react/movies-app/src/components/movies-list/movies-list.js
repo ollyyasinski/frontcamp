@@ -5,10 +5,16 @@ import MovieItem from "./movie-item/movies-item";
 import MoviesListHeader from "./movies-list-header/movies-list-header";
 import "./movies-list.css";
 
-const MoviesList = props => {
+const MoviesList = ({
+  movies,
+  title,
+  activeTab,
+  selectFirstOption,
+  selectSecondOption
+}) => {
   const items = [];
 
-  for (const movie of props.movies) {
+  for (const movie of movies) {
     items.push(
       <MovieItem
         key={movie.id}
@@ -22,7 +28,12 @@ const MoviesList = props => {
 
   return (
     <Fragment>
-      <MoviesListHeader title={props.title} />
+      <MoviesListHeader
+        title={title}
+        activeTab={activeTab}
+        selectFirstOption={selectFirstOption}
+        selectSecondOption={selectSecondOption}
+      />
       <div className="movies-list">{items}</div>
     </Fragment>
   );
@@ -30,7 +41,11 @@ const MoviesList = props => {
 
 MoviesList.propTypes = {
   movies: PropTypes.array,
-  title: PropTypes.string
+  title: PropTypes.string,
+  activeTab: PropTypes.string,
+  onClick: PropTypes.func,
+  selectFirstOption: PropTypes.func,
+  selectSecondOption: PropTypes.func
 };
 
 export default MoviesList;

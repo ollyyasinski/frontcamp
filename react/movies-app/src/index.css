@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -11,11 +12,10 @@ body {
   --color-medium-grey: #424242;
   --color-light-grey: #555;
   --color-white: #fff;
-  --color-pink: #f65260;
 
-  --selectoin-color: var(--color-light-red);
+  --selection-color: var(--color-light-red);
   --background-color: var(--color-dark-grey);
-  --font-color: var(--color-white);
+  --font-color: rgba(255, 255, 255, 0.8);
 }
 
 code {
