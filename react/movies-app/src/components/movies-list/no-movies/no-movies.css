@@ -1,0 +1,10 @@
+.no-movies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px - 70px - 395px);
+  background-color: var(--background-color);
+  font-size: 50px;
+  color: var(--font-color);
+}

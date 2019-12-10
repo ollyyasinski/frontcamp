@@ -21,7 +21,7 @@
 
 .toggle div {
   padding: 10px 20px;
-  background-color: var(--color-medium-grey);
+  background-color: rgb(66, 66, 66, 0.7);
   cursor: pointer;
 }
 

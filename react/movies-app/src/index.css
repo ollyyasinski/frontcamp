@@ -1,3 +1,7 @@
+html {
+  min-height: 100vh;
+}
+
 body {
   --color-light-red: #f65261;
   --color-light-grey: #a1e66f;
@@ -17,6 +21,10 @@ body {
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body > div {
+  height: 100%;
 }
 
 code {

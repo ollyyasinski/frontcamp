@@ -68,7 +68,11 @@ class SearchPage extends Component {
         />
         <MoviesList
           movies={response.data}
-          title={`${response.data.length} movie found`}
+          title={
+            response.data.length > 0
+              ? `${response.data.length} movie found`
+              : null
+          }
           activeTab={this.state.sortState.active}
           tabs={SORTING_TYPES}
           selectFirstOption={() => this.selectReleaseDateOption()}
