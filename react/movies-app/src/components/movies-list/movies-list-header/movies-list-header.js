@@ -13,13 +13,15 @@ const MoviesListHeader = ({
 }) => (
   <div className="movies-list-header">
     <h4>{title}</h4>
-    <Toggle
-      title={"SORT BY"}
-      activeTab={activeTab}
-      tabs={tabs}
-      selectFirstOption={selectFirstOption}
-      selectSecondOption={selectSecondOption}
-    />
+    {tabs && (
+      <Toggle
+        title={"SORT BY"}
+        activeTab={activeTab}
+        tabs={tabs}
+        selectFirstOption={selectFirstOption}
+        selectSecondOption={selectSecondOption}
+      />
+    )}
   </div>
 );
 
