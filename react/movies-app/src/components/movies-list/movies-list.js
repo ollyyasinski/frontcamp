@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
+import "./movies-list.css";
+
 import MovieItem from "./movie-item/movies-item";
 import MoviesListHeader from "./movies-list-header/movies-list-header";
-import "./movies-list.css";
 import NoMovies from "./no-movies/no-movies";
 
 const MoviesList = ({

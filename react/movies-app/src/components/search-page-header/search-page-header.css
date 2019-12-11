@@ -1,7 +1,7 @@
 .search-page-header {
   height: 395px;
   width: 100%;
-  background-image: url("../../assets//movies-background.PNG");
+  background-image: url("../../assets//movies-background.png");
   color: var(--font-color);
 }
 

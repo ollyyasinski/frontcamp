@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./movies-list-header.css";
+
 import Toggle from "../../toggle/toggle";
 
 const MoviesListHeader = ({

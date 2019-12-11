@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./movie-details-page-header.css";
+import Rating from "./rating/rating";
 import Logo from "../logo/logo";
 import SearchIcon from "../../assets/search.svg";
-import Rating from "./rating/rating";
 
 const MovieDetailsPageHeader = ({
   imgSource,

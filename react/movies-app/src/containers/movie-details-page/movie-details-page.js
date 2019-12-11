@@ -1,11 +1,8 @@
 import React, { Component, Fragment } from "react";
 
+import response from "../../data-mocks/get-movies-response.json";
 import MoviesList from "../../components/movies-list/movies-list";
 import Footer from "../../components/footer/footer";
-
-import response from "../../data-mocks/get-movies-response.json";
-
-import "./movie-details-page.css";
 import MovieDetailsPageHeader from "../../components/movie-details-page-header/movie-details-page-header";
 
 class MovieDetailsPage extends Component {

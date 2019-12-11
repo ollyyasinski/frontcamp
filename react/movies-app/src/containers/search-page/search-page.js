@@ -1,14 +1,11 @@
 import React, { Component, Fragment } from "react";
 
+import response from "../../data-mocks/get-movies-response.json";
+import { SEARCH_TYPES } from "../../consts/search-types";
+import { SORTING_TYPES } from "../../consts/sorting-types";
 import MoviesList from "../../components/movies-list/movies-list";
 import Footer from "../../components/footer/footer";
-
-import response from "../../data-mocks/get-movies-response.json";
-import { SORTING_TYPES } from "../../consts/sorting-types";
 import SearchPageHeader from "../../components/search-page-header/search-page-header";
-import { SEARCH_TYPES } from "../../consts/search-types";
-
-import "./search-page.css";
 
 class SearchPage extends Component {
   constructor() {

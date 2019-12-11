@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./search-page-header.css";
+
 import Search from "../search/search";
 import Logo from "../logo/logo";
 
