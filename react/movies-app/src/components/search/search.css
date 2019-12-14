@@ -19,8 +19,12 @@ form {
   margin-right: 15px;
   padding: 20px 25px;
   background-color: rgb(66, 66, 66, 0.6);
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--font-color);
   font-size: 20px;
+}
+
+.search__input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 button {

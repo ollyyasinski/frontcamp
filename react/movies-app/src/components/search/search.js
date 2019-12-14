@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./search.css";
+
 import Toggle from "../toggle/toggle";
 
 const Search = ({ activeTab, tabs, selectFirstOption, selectSecondOption }) => (

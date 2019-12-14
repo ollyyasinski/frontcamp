@@ -2,7 +2,7 @@ import { ACTION_TYPES } from "../actions/load-data-action";
 
 export default (
   state = {
-    maviesList: null
+    moviesList: []
   },
   action
 ) => {
@@ -10,7 +10,7 @@ export default (
     case ACTION_TYPES.loadMoviesSuccess:
       return {
         ...state,
-        moviesList: action.payload
+        moviesList: action.payload.data
       };
     default:
       return state;

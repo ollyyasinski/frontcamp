@@ -1,27 +1,16 @@
 import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
-
-import MoviesList from "../../components/movies-list/movies-list";
-import Footer from "../../components/footer/footer";
+// import { connect } from "react-redux";
 
 import response from "../../data-mocks/get-movies-response.json";
-
-import "./search-page.css";
+import MoviesList from "../../components/movies-list/movies-list";
+import Footer from "../../components/footer/footer";
 import MovieDetailsPageHeader from "../../components/movie-details-page-header/movie-details-page-header";
-import loadMoviesAation from "../../actions/load-data-action";
+// import loadMoviesAation from "../../actions/load-data-action";
 
-class SearchPage extends Component {
-  componentDidMount() {
-    this.props.loadMovies();
-  }
-
+class MovieDetailsPage extends Component {
   render() {
-    const genre = "Drame";
-    const selectedMovie = response.data[3];
-
-    this.props;
-
-    debugger;
+    const selectedMovie = response.data[39];
+    const genre = selectedMovie.genres.join(", ");
 
     return (
       <Fragment>
@@ -29,9 +18,10 @@ class SearchPage extends Component {
           imgSource={selectedMovie.poster_path}
           title={selectedMovie.title}
           year={selectedMovie.release_date.slice(0, 4)}
-          genre={selectedMovie.genres.join(", ")}
+          genre={genre}
           duration={selectedMovie.runtime ? selectedMovie.runtime : "-"}
           description={selectedMovie.overview}
+          rating={selectedMovie.vote_average}
         />
         <MoviesList movies={response.data} title={`Films by ${genre} genre`} />
         <Footer />
@@ -40,12 +30,13 @@ class SearchPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  moviesList: state.moviesList
-});
+// const mapStateToProps = state => ({
+//   moviesList: state.moviesList
+// });
 
-const mapDispatchToProps = dispatch => ({
-  loadMovies: () => dispatch(loadMoviesAation())
-});
+// const mapDispatchToProps = dispatch => ({
+//   loadMovies: () => dispatch(loadMoviesAation())
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);
+// export default connect(mapStateToProps, mapDispatchToProps)(MovieDetailsPage);
+export default MovieDetailsPage;

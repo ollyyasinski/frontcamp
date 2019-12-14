@@ -1,14 +1,13 @@
 import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
 
+import { SEARCH_TYPES } from "../../consts/search-types";
+import { SORTING_TYPES } from "../../consts/sorting-types";
 import MoviesList from "../../components/movies-list/movies-list";
 import Footer from "../../components/footer/footer";
-
-import response from "../../data-mocks/get-movies-response.json";
-import { SORTING_TYPES } from "../../consts/sorting-types";
 import SearchPageHeader from "../../components/search-page-header/search-page-header";
-import { SEARCH_TYPES } from "../../consts/search-types";
 
-import "./search-page.css";
+import { loadMoviesAction } from "../../actions/load-data-action";
 
 class SearchPage extends Component {
   constructor() {
@@ -22,6 +21,10 @@ class SearchPage extends Component {
         active: SEARCH_TYPES.firstOption
       }
     };
+  }
+
+  componentDidMount() {
+    this.props.loadMovies();
   }
 
   selectReleaseDateOption() {
@@ -67,10 +70,10 @@ class SearchPage extends Component {
           selectSecondOption={() => this.selectGenreOption()}
         />
         <MoviesList
-          movies={response.data}
+          movies={this.props.moviesList}
           title={
-            response.data.length > 0
-              ? `${response.data.length} movie found`
+            this.props.moviesList.length > 0
+              ? `${this.props.moviesList.length} movie found`
               : null
           }
           activeTab={this.state.sortState.active}
@@ -84,4 +87,15 @@ class SearchPage extends Component {
   }
 }
 
-export default SearchPage;
+const mapStateToProps = state => {
+  // debugger;
+  return {
+    moviesList: state.loadDataReducer.moviesList
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  loadMovies: () => dispatch(loadMoviesAction())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

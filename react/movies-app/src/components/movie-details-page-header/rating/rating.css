@@ -1,0 +1,11 @@
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border: 1px solid var(--color-white);
+  border-radius: 50%;
+  color: var(--color-light-green);
+  font-size: 25px;
+}

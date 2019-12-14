@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./search-page-header.css";
+import "./movie-details-page-header.css";
+import Rating from "./rating/rating";
 import Logo from "../logo/logo";
+import SearchIcon from "../../assets/search.svg";
 
 const MovieDetailsPageHeader = ({
   imgSource,
@@ -10,17 +12,25 @@ const MovieDetailsPageHeader = ({
   year,
   duration,
   genre,
-  description
+  description,
+  rating
 }) => (
-  <div className="movie-detals-page-header">
-    <div className="movie-detals-page-header__overlay">
-      <Logo />
-      <div className="movie-detals-page-header__content-wrapper">
+  <div className="movie-details-page-header">
+    <div className="movie-details-page-header__overlay">
+      <div className="movie-details-page-header__top-row">
+        <Logo />
+        <img src={SearchIcon} alt="Search" />
+      </div>
+
+      <div className="movie-details-page-header__content-wrapper">
         <img src={imgSource} alt="Movie poster" />
-        <div clasName="movie-details-page-header__details-wrapper">
-          <h1>{title}</h1>
+        <div className="movie-details-page-header__details-wrapper">
+          <div className="movie-details-page-header__title-wrapper">
+            <h1>{title}</h1>
+            <Rating rating={rating} />
+          </div>
           <p>{genre}</p>
-          <div>
+          <div className="movie-details-page-header__year-duration-wrapper">
             <div>{year}</div>
             <div>{duration}</div>
           </div>
@@ -35,9 +45,10 @@ MovieDetailsPageHeader.propTypes = {
   imgSource: PropTypes.string,
   title: PropTypes.string,
   year: PropTypes.string,
-  duration: PropTypes.string,
+  duration: PropTypes.number,
   genre: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  rating: PropTypes.number
 };
 
 export default MovieDetailsPageHeader;
