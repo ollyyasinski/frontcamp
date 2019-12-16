@@ -7,8 +7,8 @@ export const loadMoviesActionSuccess = data => ({
   payload: data
 });
 
-export const loadMoviesAction = () => dispatch => {
-  fetch("https://reactjs-cdp.herokuapp.com/movies")
+export const loadMoviesAction = queryParams => dispatch => {
+  fetch(`https://reactjs-cdp.herokuapp.com/movies${queryParams}`)
     .then(response => {
       if (!response.ok) {
         throw Error(response.statusText);
