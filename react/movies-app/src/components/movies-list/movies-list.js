@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-
 import "./movies-list.css";
 
 import MovieItem from "./movie-item/movies-item";
@@ -13,7 +12,9 @@ const MoviesList = ({
   activeTab,
   tabs,
   selectFirstOption,
-  selectSecondOption
+  selectSecondOption,
+  searchQuery,
+  supportQuery
 }) => {
   const items = [];
 
@@ -21,6 +22,7 @@ const MoviesList = ({
     items.push(
       <MovieItem
         key={movie.id}
+        id={movie.id}
         imgSource={movie.poster_path}
         title={movie.title}
         year={movie.release_date.slice(0, 4)}
@@ -29,6 +31,7 @@ const MoviesList = ({
     );
   }
 
+  console.log(searchQuery);
   return (
     <Fragment>
       <MoviesListHeader
@@ -38,7 +41,8 @@ const MoviesList = ({
         selectFirstOption={selectFirstOption}
         selectSecondOption={selectSecondOption}
       />
-      {items.length > 0 ? (
+      {(!supportQuery && items.length > 0) ||
+      (supportQuery && items.length > 0 && !!searchQuery) ? (
         <div className="movies-list">{items}</div>
       ) : (
         <NoMovies />
@@ -56,7 +60,9 @@ MoviesList.propTypes = {
     secondOption: PropTypes.string
   }),
   selectFirstOption: PropTypes.func,
-  selectSecondOption: PropTypes.func
+  selectSecondOption: PropTypes.func,
+  searchQuery: PropTypes.string,
+  supportQuery: PropTypes.bool
 };
 
 export default MoviesList;

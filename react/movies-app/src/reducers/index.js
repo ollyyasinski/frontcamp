@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
-import loadDataReducer from "./load-data-reducer";
+import moviesReducer from "./movies-reducer";
 import sortReducer from "./sort-reducer";
 import searchReducer from "./search-reducer";
 
 export default combineReducers({
-  loadDataReducer,
+  moviesReducer,
   sortReducer,
   searchReducer
 });

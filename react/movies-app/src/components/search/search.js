@@ -10,11 +10,16 @@ const Search = ({
   tabs,
   selectFirstOption,
   selectSecondOption,
-  onSearchClick
+  onSearchClick,
+  inputValue
 }) => (
   <div className="search__wrapper">
     <form onSubmit={onSearchClick}>
-      <input className="search__input" placeholder="Search"></input>
+      <input
+        className="search__input"
+        placeholder="Search"
+        defaultValue={inputValue}
+      ></input>
       <button>SEARCH</button>
     </form>
     <Toggle
@@ -35,7 +40,8 @@ Search.propTypes = {
   }),
   selectFirstOption: PropTypes.func,
   selectSecondOption: PropTypes.func,
-  onSearchClick: PropTypes.func
+  onSearchClick: PropTypes.func,
+  inputValue: PropTypes.string
 };
 
 export default Search;

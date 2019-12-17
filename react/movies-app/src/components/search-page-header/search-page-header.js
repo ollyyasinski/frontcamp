@@ -12,7 +12,8 @@ const SearchPageHeader = ({
   tabs,
   selectFirstOption,
   selectSecondOption,
-  onSearchClick
+  onSearchClick,
+  inputValue
 }) => (
   <div className="search-page-header">
     <div className="search-page-header__overlay">
@@ -25,6 +26,7 @@ const SearchPageHeader = ({
           selectFirstOption={selectFirstOption}
           selectSecondOption={selectSecondOption}
           onSearchClick={onSearchClick}
+          inputValue={inputValue}
         />
       </div>
     </div>
@@ -40,7 +42,8 @@ SearchPageHeader.propTypes = {
   }),
   selectFirstOption: PropTypes.func,
   selectSecondOption: PropTypes.func,
-  onSearchClick: PropTypes.func
+  onSearchClick: PropTypes.func,
+  inputValue: PropTypes.string
 };
 
 export default SearchPageHeader;
