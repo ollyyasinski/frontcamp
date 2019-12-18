@@ -31,7 +31,6 @@ const MoviesList = ({
     );
   }
 
-  console.log(searchQuery);
   return (
     <Fragment>
       <MoviesListHeader
