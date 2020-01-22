@@ -13,6 +13,8 @@ import { NewsCatalogComponent } from "./containers/news-catalog/news-catalog.com
 import { FilterFormComponent } from "./components/filter-form/filter-form.component";
 import { NewsListComponent } from './components/news-list/news-list.component';
 import { NewsCardComponent } from './components/news-list/news-card/news-card.component';
+import { EditNewsComponent } from './containers/edit-news/edit-news.component';
+import { EditFormComponent } from './components/edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { NewsCardComponent } from './components/news-list/news-card/news-card.co
     NewsCatalogComponent,
     FilterFormComponent,
     NewsListComponent,
-    NewsCardComponent
+    NewsCardComponent,
+    EditNewsComponent,
+    EditFormComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
