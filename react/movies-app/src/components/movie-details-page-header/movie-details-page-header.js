@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import "./movie-details-page-header.css";
 import Rating from "./rating/rating";
@@ -19,7 +20,9 @@ const MovieDetailsPageHeader = ({
     <div className="movie-details-page-header__overlay">
       <div className="movie-details-page-header__top-row">
         <Logo />
-        <img src={SearchIcon} alt="Search" />
+        <Link to="/search">
+          <img src={SearchIcon} alt="Search" />
+        </Link>
       </div>
 
       <div className="movie-details-page-header__content-wrapper">
@@ -45,7 +48,7 @@ MovieDetailsPageHeader.propTypes = {
   imgSource: PropTypes.string,
   title: PropTypes.string,
   year: PropTypes.string,
-  duration: PropTypes.number,
+  duration: PropTypes.any,
   genre: PropTypes.string,
   description: PropTypes.string,
   rating: PropTypes.number

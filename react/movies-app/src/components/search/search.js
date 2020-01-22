@@ -5,10 +5,21 @@ import "./search.css";
 
 import Toggle from "../toggle/toggle";
 
-const Search = ({ activeTab, tabs, selectFirstOption, selectSecondOption }) => (
+const Search = ({
+  activeTab,
+  tabs,
+  selectFirstOption,
+  selectSecondOption,
+  onSearchClick,
+  inputValue
+}) => (
   <div className="search__wrapper">
-    <form>
-      <input className="search__input" placeholder="Search"></input>
+    <form onSubmit={onSearchClick}>
+      <input
+        className="search__input"
+        placeholder="Search"
+        defaultValue={inputValue}
+      ></input>
       <button>SEARCH</button>
     </form>
     <Toggle
@@ -28,7 +39,9 @@ Search.propTypes = {
     secondOption: PropTypes.string
   }),
   selectFirstOption: PropTypes.func,
-  selectSecondOption: PropTypes.func
+  selectSecondOption: PropTypes.func,
+  onSearchClick: PropTypes.func,
+  inputValue: PropTypes.string
 };
 
 export default Search;
