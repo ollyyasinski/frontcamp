@@ -1,0 +1,30 @@
+.search-page-header {
+  height: 395px;
+  width: 100%;
+  background-image: url("../../assets//movies-background.png");
+  color: var(--font-color);
+}
+
+.search-page-header__overlay {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(36, 36, 36, 0.9);
+}
+
+.search-page-header .logo {
+  position: absolute;
+  top: 20px;
+  left: 60px;
+}
+
+.search-page-header__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  text-transform: uppercase;
+}

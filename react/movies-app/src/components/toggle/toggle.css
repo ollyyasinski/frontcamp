@@ -1,0 +1,38 @@
+.toggle__wrapper {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+}
+
+.toggle__title {
+  padding: 0;
+  margin-right: 20px;
+  color: var(--font-color);
+  text-transform: uppercase;
+}
+
+.toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--font-color);
+}
+
+.toggle div {
+  padding: 10px 20px;
+  background-color: rgb(66, 66, 66, 0.7);
+  cursor: pointer;
+}
+
+.toggle div:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.toggle div:nth-child(2) {
+  border-radius: 0 5px 5px 0;
+}
+
+.toggle div.selected {
+  background-color: var(--selection-color);
+}
