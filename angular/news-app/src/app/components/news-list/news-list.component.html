@@ -1,0 +1,8 @@
+<app-news-card
+  *ngFor="let card of articles.slice(0, 6)"
+  [title]="card.title"
+  [content]="card.content"
+  [imageSrc]="card.urlToImage"
+  [detailsLink]="card.url"
+></app-news-card>
+<button class="load-more-button" (click)="onLoadMoreClick()">Load More</button>

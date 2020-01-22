@@ -1,3 +1,10 @@
 <app-basic-layout headerTitle="Test">
-  <app-toolbar [sourceItems]="sources"></app-toolbar>
+  <app-toolbar
+    [sourceItems]="sources"
+    (addArticleHandler)="addArticle()"
+  ></app-toolbar>
+  <app-news-list
+    [articles]="articles"
+    (loadMoreHandler)="loadMore()"
+  ></app-news-list>
 </app-basic-layout>
