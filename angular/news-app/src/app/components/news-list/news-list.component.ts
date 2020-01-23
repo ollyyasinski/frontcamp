@@ -9,6 +9,7 @@ import { Article } from "src/app/models/article-model";
 })
 export class NewsListComponent {
   @Input() articles: Article[];
+  @Input() isLoadMoreButtonDisplayed: boolean;
   @Output() loadMoreHandler = new EventEmitter();
 
   onLoadMoreClick(): void {

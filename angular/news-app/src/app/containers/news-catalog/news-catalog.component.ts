@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { Source } from "src/app/models/sources-model";
 import { Article } from "src/app/models/article-model";
@@ -10,12 +10,24 @@ import { ARTICLES_MOCK } from "../../../mocks/articles-mock";
   templateUrl: "./news-catalog.component.html",
   styleUrls: ["./news-catalog.component.css"]
 })
-export class NewsCatalogComponent {
+export class NewsCatalogComponent implements OnInit {
   sources: Source[] = SOURCES_MOCK;
-  articles: Article[] = ARTICLES_MOCK;
+  articles: Article[];
+  loadedArticles: number = 7;
+  isLoadMoreButtonDisplayed: boolean;
+
+  ngOnInit() {
+    this.articles = ARTICLES_MOCK.slice(0, this.loadedArticles);
+    this.isLoadMoreButtonDisplayed = this.loadedArticles < ARTICLES_MOCK.length;
+  }
 
   loadMore(): void {
-    console.log("load more");
+    this.articles.length - this.loadedArticles < 7
+      ? (this.loadedArticles += this.articles.length)
+      : (this.loadedArticles += 7);
+
+    this.articles = ARTICLES_MOCK.slice(0, this.loadedArticles);
+    this.isLoadMoreButtonDisplayed = this.loadedArticles < ARTICLES_MOCK.length;
   }
 
   addArticle(): void {
