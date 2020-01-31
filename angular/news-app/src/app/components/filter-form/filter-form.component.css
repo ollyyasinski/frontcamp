@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-direction: row;
+}
+
+:host /deep/ button {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+:host /deep/ button:hover {
+  background-color: var(--color-grey);
+}

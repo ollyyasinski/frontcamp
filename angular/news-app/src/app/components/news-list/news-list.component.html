@@ -1,0 +1,14 @@
+<app-news-card
+  *ngFor="let card of articles"
+  [title]="card.title"
+  [content]="card.content"
+  [imageSrc]="card.urlToImage"
+  [detailsLink]="card.url"
+></app-news-card>
+<button
+  *ngIf="isLoadMoreButtonDisplayed"
+  class="load-more-button"
+  (click)="onLoadMoreClick()"
+>
+  Load More
+</button>
