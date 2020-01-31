@@ -1,10 +1,5 @@
-<app-news-card
-  *ngFor="let card of articles"
-  [title]="card.title"
-  [content]="card.content"
-  [imageSrc]="card.urlToImage"
-  [detailsLink]="card.url"
-></app-news-card>
+<app-new-cards-factory [componentData]="articlesData"></app-new-cards-factory>
+
 <button
   *ngIf="isLoadMoreButtonDisplayed"
   class="load-more-button"

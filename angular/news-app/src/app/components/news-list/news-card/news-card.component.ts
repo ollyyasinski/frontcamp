@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Injector } from "@angular/core";
 
 @Component({
   selector: "app-news-card",
@@ -11,4 +11,12 @@ export class NewsCardComponent {
   @Input() date: string;
   @Input() imageSrc: string;
   @Input() detailsLink: string;
+
+  constructor(private injector: Injector) {
+    this.title = this.injector.get("title");
+    this.content = this.injector.get("content");
+    this.date = this.injector.get("date");
+    this.imageSrc = this.injector.get("imageSrc");
+    this.detailsLink = this.injector.get("detailsLink");
+  }
 }
