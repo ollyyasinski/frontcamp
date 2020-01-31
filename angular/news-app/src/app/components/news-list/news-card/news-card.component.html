@@ -1,7 +1,8 @@
-<img [src]="imageSrc" />
+<img [src]="imageSrc !== 'null' ? imageSrc : placeholderURL" />
 <div class="news-card__content-wrapper">
-  <h2>{{title}}</h2>
-  <p>{{content}}</p>
+  <h2>{{ title }}</h2>
+  <p>{{ date | date: "MMM d, y, h:mm:ss a" }}</p>
+  <p>{{ content }}</p>
   <a [href]="detailsLink"></a>
 </div>
 <div class="news-card__buttons-wrapper">

@@ -1,4 +1,9 @@
-<form>
-  <input type="text" class="form-control" />
+<form (submit)="onSubmit()">
+  <input
+    type="text"
+    class="form-control"
+    name="newsItemName"
+    [(ngModel)]="newsItemName"
+  />
   <button type="submit">Filter</button>
 </form>

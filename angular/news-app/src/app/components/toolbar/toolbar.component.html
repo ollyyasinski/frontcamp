@@ -1,7 +1,8 @@
 <app-select-source-dropdown
   [sourceItems]="sourceItems"
+  (onSourceChange)="onSourceChange($event)"
 ></app-select-source-dropdown>
-<app-filter-form></app-filter-form>
+<app-filter-form (filterInput)="onFilter($event)"></app-filter-form>
 
 <div class="created-by-me-checkbox">
   <input type="checkbox" id="createdByMeCheckbox" name="createdByMe" />

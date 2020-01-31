@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 import { Source } from "src/app/models/sources-model";
 
@@ -7,10 +7,11 @@ import { Source } from "src/app/models/sources-model";
   templateUrl: "./select-source-dropdown.component.html",
   styleUrls: ["./select-source-dropdown.component.css"]
 })
-export class SelectSourceDropdownComponent implements OnInit {
+export class SelectSourceDropdownComponent {
   @Input() sourceItems: Source[];
+  @Output() onSourceChange: EventEmitter<Source> = new EventEmitter();
 
-  constructor() {}
-
-  ngOnInit() {}
+  onValueChange(event: Source) {
+    this.onSourceChange.emit(event);
+  }
 }
