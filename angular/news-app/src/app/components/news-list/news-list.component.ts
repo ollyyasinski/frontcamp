@@ -39,15 +39,17 @@ export class NewsListComponent implements OnInit, OnChanges {
   }
 
   private loadArticles(): void {
-    this.articlesData = {
-      component: NewsCardComponent,
-      inputs: this.articles.map(article => ({
-        title: article.title,
-        content: article.content,
-        date: article.publishedAt,
-        imageSrc: article.urlToImage,
-        detailsLink: article.url
-      }))
-    };
+    if (this.articles) {
+      this.articlesData = {
+        component: NewsCardComponent,
+        inputs: this.articles.map(article => ({
+          title: article.title,
+          content: article.content,
+          date: article.publishedAt,
+          imageSrc: article.urlToImage,
+          detailsLink: article.url
+        }))
+      };
+    }
   }
 }

@@ -12,6 +12,8 @@ export class NewsCardComponent {
   @Input() imageSrc: string;
   @Input() detailsLink: string;
 
+  placeholderURL = "../../../../assets/placeholder.png";
+
   constructor(private injector: Injector) {
     this.title = this.injector.get("title");
     this.content = this.injector.get("content");

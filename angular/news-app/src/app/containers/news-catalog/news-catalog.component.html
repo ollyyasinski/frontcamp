@@ -1,10 +1,11 @@
 <app-basic-layout headerTitle="News Catalog">
   <app-toolbar
-    [sourceItems]="sources"
+    [sourceItems]="sources$ | async"
+    (filterHandler)="filterArticles($event)"
     (addArticleHandler)="addArticle()"
   ></app-toolbar>
   <app-news-list
-    [articles]="articles"
+    [articles]="articles$ | async | filter: newsItemName"
     (loadMoreHandler)="loadMore()"
     [isLoadMoreButtonDisplayed]="isLoadMoreButtonDisplayed"
   ></app-news-list>

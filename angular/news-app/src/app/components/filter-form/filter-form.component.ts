@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'app-filter-form',
-  templateUrl: './filter-form.component.html',
-  styleUrls: ['./filter-form.component.css']
+  selector: "app-filter-form",
+  templateUrl: "./filter-form.component.html",
+  styleUrls: ["./filter-form.component.css"]
 })
 export class FilterFormComponent implements OnInit {
+  newsItemName: string;
 
-  constructor() { }
+  @Output() filterInput: EventEmitter<string> = new EventEmitter();
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit() {}
+
+  onSubmit(): void {
+    this.filterInput.emit(this.newsItemName);
   }
-
 }

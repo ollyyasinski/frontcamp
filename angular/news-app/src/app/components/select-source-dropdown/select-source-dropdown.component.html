@@ -1,4 +1,4 @@
-<select>
+<select [(ngModel)]="selectedOption">
   <option *ngFor="let item of sourceItems" value="item.name">{{
     item.name
   }}</option>

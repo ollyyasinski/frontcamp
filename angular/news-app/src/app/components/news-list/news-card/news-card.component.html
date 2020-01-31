@@ -1,7 +1,7 @@
-<img [src]="imageSrc" />
+<img [src]="imageSrc !== 'null' ? imageSrc : placeholderURL" />
 <div class="news-card__content-wrapper">
-  <h2>{{title}}</h2>
-  <p>{{content}}</p>
+  <h2>{{ title }}</h2>
+  <p>{{ content }}</p>
   <a [href]="detailsLink"></a>
 </div>
 <div class="news-card__buttons-wrapper">

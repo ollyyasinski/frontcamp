@@ -9,9 +9,14 @@ import { Source } from "src/app/models/sources-model";
 })
 export class ToolbarComponent {
   @Input() sourceItems: Source[];
-  @Output() addArticleHandler = new EventEmitter();
+  @Output() addArticleHandler: EventEmitter<any> = new EventEmitter();
+  @Output() filterHandler: EventEmitter<string> = new EventEmitter();
 
   onAddArticle(): void {
     this.addArticleHandler.emit();
+  }
+
+  onFilter(event: string): void {
+    this.filterHandler.emit(event);
   }
 }

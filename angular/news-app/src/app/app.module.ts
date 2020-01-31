@@ -16,6 +16,10 @@ import { NewsCardComponent } from "./components/news-list/news-card/news-card.co
 import { EditNewsComponent } from "./containers/edit-news/edit-news.component";
 import { EditFormComponent } from "./components/edit-form/edit-form.component";
 import { AddNewsComponent } from "./containers/add-news/add-news.component";
+import { FilterPipe } from "./components/filter-form/filter.pipe";
+import { NewCardsFactoryComponent } from "./components/news-list/new-cards-factory/new-cards-factory.component";
+import { HttpService } from "./services/http-service";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -31,10 +35,13 @@ import { AddNewsComponent } from "./containers/add-news/add-news.component";
     NewsCardComponent,
     EditNewsComponent,
     EditFormComponent,
-    AddNewsComponent
+    AddNewsComponent,
+    FilterPipe,
+    NewCardsFactoryComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [HttpService],
+  bootstrap: [AppComponent],
+  entryComponents: [NewsCardComponent]
 })
 export class AppModule {}
