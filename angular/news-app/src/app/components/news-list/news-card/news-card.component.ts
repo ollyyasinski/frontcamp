@@ -1,4 +1,11 @@
-import { Component, Input, Injector } from "@angular/core";
+import {
+  Component,
+  Input,
+  Injector,
+  Output,
+  EventEmitter
+} from "@angular/core";
+import { ArticlesService } from "src/app/services/articles.service";
 
 @Component({
   selector: "app-news-card",
@@ -14,11 +21,18 @@ export class NewsCardComponent {
 
   placeholderURL = "../../../../assets/placeholder.png";
 
-  constructor(private injector: Injector) {
+  constructor(
+    private readonly injector: Injector,
+    private readonly articlesService: ArticlesService
+  ) {
     this.title = this.injector.get("title");
     this.content = this.injector.get("content");
     this.date = this.injector.get("date");
     this.imageSrc = this.injector.get("imageSrc");
     this.detailsLink = this.injector.get("detailsLink");
+  }
+
+  onEdit(): void {
+    this.articlesService.selectArticle(this.title);
   }
 }

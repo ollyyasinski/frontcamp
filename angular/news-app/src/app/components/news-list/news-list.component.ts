@@ -5,7 +5,9 @@ import {
   EventEmitter,
   OnInit,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
+  ViewChild,
+  ViewContainerRef
 } from "@angular/core";
 
 import { Article } from "src/app/models/article-model";
@@ -19,7 +21,8 @@ import { NewsCardComponent } from "./news-card/news-card.component";
 export class NewsListComponent implements OnInit, OnChanges {
   @Input() articles: Article[];
   @Input() isLoadMoreButtonDisplayed: boolean;
-  @Output() loadMoreHandler = new EventEmitter();
+  @Output() loadMoreHandler: EventEmitter<any> = new EventEmitter();
+  @Output() editHandler: EventEmitter<any> = new EventEmitter();
 
   articlesData = null;
 
@@ -36,6 +39,10 @@ export class NewsListComponent implements OnInit, OnChanges {
   onLoadMoreClick(): void {
     this.loadMoreHandler.emit();
     this.loadArticles();
+  }
+
+  onEditClick(): void {
+    this.editHandler.emit();
   }
 
   private loadArticles(): void {

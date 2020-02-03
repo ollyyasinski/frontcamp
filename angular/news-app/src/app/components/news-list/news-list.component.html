@@ -1,4 +1,7 @@
-<app-new-cards-factory [componentData]="articlesData"></app-new-cards-factory>
+<app-new-cards-factory
+  [componentData]="articlesData"
+  #container
+></app-new-cards-factory>
 
 <button
   *ngIf="isLoadMoreButtonDisplayed"

@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -18,8 +18,9 @@ import { EditFormComponent } from "./components/edit-form/edit-form.component";
 import { AddNewsComponent } from "./containers/add-news/add-news.component";
 import { FilterPipe } from "./components/filter-form/filter.pipe";
 import { NewCardsFactoryComponent } from "./components/news-list/new-cards-factory/new-cards-factory.component";
-import { HttpService } from "./services/http-service";
+import { HttpService } from "./services/http.service";
 import { HttpClientModule } from "@angular/common/http";
+import { ArticlesService } from "./services/articles.service";
 
 @NgModule({
   declarations: [
@@ -39,8 +40,14 @@ import { HttpClientModule } from "@angular/common/http";
     FilterPipe,
     NewCardsFactoryComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [HttpService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
+  providers: [HttpService, ArticlesService],
   bootstrap: [AppComponent],
   entryComponents: [NewsCardComponent]
 })

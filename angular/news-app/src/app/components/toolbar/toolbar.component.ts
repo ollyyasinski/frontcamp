@@ -11,6 +11,7 @@ export class ToolbarComponent {
   @Input() sourceItems: Source[];
   @Output() addArticleHandler: EventEmitter<any> = new EventEmitter();
   @Output() filterHandler: EventEmitter<string> = new EventEmitter();
+  @Output() sourceChangeHandler: EventEmitter<Source> = new EventEmitter();
 
   onAddArticle(): void {
     this.addArticleHandler.emit();
@@ -18,5 +19,9 @@ export class ToolbarComponent {
 
   onFilter(event: string): void {
     this.filterHandler.emit(event);
+  }
+
+  onSourceChange(event: Source) {
+    this.sourceChangeHandler.emit(event);
   }
 }

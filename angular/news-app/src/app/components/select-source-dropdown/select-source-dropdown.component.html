@@ -1,5 +1,8 @@
-<select [(ngModel)]="selectedOption">
-  <option *ngFor="let item of sourceItems" value="item.name">{{
+<select
+  (ngModelChange)="onValueChange($event)"
+  [(ngModel)]="sourceItems && sourceItems[0]"
+>
+  <option *ngFor="let item of sourceItems" [ngValue]="item">{{
     item.name
   }}</option>
 </select>

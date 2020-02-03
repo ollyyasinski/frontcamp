@@ -9,6 +9,12 @@ export interface Article {
   content: string;
 }
 
+export interface ArticlePatch {
+  title: string;
+  content: string;
+  description: string;
+}
+
 interface ArticleSource {
   id: string;
   name: string;

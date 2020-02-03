@@ -1,10 +1,11 @@
 <img [src]="imageSrc !== 'null' ? imageSrc : placeholderURL" />
 <div class="news-card__content-wrapper">
   <h2>{{ title }}</h2>
+  <p>{{ date | date: "MMM d, y, h:mm:ss a" }}</p>
   <p>{{ content }}</p>
   <a [href]="detailsLink"></a>
 </div>
 <div class="news-card__buttons-wrapper">
-  <button routerLink="/edit">Edit</button>
+  <button routerLink="/edit" (click)="onEdit()">Edit</button>
   <button>Delete</button>
 </div>
