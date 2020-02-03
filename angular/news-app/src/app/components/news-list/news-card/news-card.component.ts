@@ -1,11 +1,8 @@
-import {
-  Component,
-  Input,
-  Injector,
-  Output,
-  EventEmitter
-} from "@angular/core";
+import { Component, Input, Injector } from "@angular/core";
+import { createCustomElement } from "@angular/elements";
 import { ArticlesService } from "src/app/services/articles.service";
+import { DeleteWarningComponent } from "../../delete-warning/delete-warning.component";
+import { DeleteWarningService } from "../../delete-warning/delete-warning.service";
 
 @Component({
   selector: "app-news-card",
@@ -23,13 +20,20 @@ export class NewsCardComponent {
 
   constructor(
     private readonly injector: Injector,
-    private readonly articlesService: ArticlesService
+    private readonly articlesService: ArticlesService,
+    private readonly warningService: DeleteWarningService
   ) {
     this.title = this.injector.get("title");
     this.content = this.injector.get("content");
     this.date = this.injector.get("date");
     this.imageSrc = this.injector.get("imageSrc");
     this.detailsLink = this.injector.get("detailsLink");
+
+    const warningElement = createCustomElement(DeleteWarningComponent, {
+      injector
+    });
+    customElements.get("delete-warning-element") ||
+      customElements.define("delete-warning-element", warningElement);
   }
 
   onEdit(): void {
@@ -37,6 +41,7 @@ export class NewsCardComponent {
   }
 
   onDelete(): void {
+    this.warningService.showAsElement();
     this.articlesService.deleteArticle(this.title);
   }
 }

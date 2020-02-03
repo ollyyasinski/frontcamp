@@ -22,6 +22,8 @@ import { NewCardsFactoryComponent } from "./components/news-list/new-cards-facto
 import { HttpService } from "./services/http.service";
 import { ArticlesService } from "./services/articles.service";
 import { SourcesService } from "./services/sources.service";
+import { DeleteWarningComponent } from "./components/delete-warning/delete-warning.component";
+import { DeleteWarningService } from "./components/delete-warning/delete-warning.service";
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { SourcesService } from "./services/sources.service";
     EditFormComponent,
     AddNewsComponent,
     FilterPipe,
-    NewCardsFactoryComponent
+    NewCardsFactoryComponent,
+    DeleteWarningComponent
   ],
   imports: [
     BrowserModule,
@@ -48,8 +51,13 @@ import { SourcesService } from "./services/sources.service";
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [HttpService, ArticlesService, SourcesService],
+  providers: [
+    HttpService,
+    ArticlesService,
+    SourcesService,
+    DeleteWarningService
+  ],
   bootstrap: [AppComponent],
-  entryComponents: [NewsCardComponent]
+  entryComponents: [NewsCardComponent, DeleteWarningComponent]
 })
 export class AppModule {}
