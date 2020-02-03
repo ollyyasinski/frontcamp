@@ -33,7 +33,7 @@ export class EditFormComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.editForm = new FormGroup({
       title: new FormControl("", [Validators.required]),
-      content: new FormControl("", [Validators.required]),
+      content: new FormControl(""),
       description: new FormControl("")
     });
 

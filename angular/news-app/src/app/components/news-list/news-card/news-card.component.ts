@@ -35,4 +35,8 @@ export class NewsCardComponent {
   onEdit(): void {
     this.articlesService.selectArticle(this.title);
   }
+
+  onDelete(): void {
+    this.articlesService.deleteArticle(this.title);
+  }
 }

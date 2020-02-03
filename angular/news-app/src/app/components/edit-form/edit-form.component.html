@@ -1,21 +1,13 @@
 <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
-  <div class="edit-form__cloumn">
-    <label for="heading">Heading</label>
-    <input type="text" class="form-control" required formControlName="title" />
-    <label for="content">Content</label>
-    <input
-      type="text"
-      class="form-control"
-      required
-      formControlName="content"
-    />
-  </div>
-  <div class="edit-form__cloumn">
-    <label for="description">Description</label>
-    <input type="text" class="form-control" formControlName="description" />
-    <div class="edit-form__buttons-wrapper">
-      <button type="submit">Save</button>
-      <button routerLink="/news">Cancel</button>
-    </div>
+  <label for="heading">Heading *</label>
+  <input type="text" class="form-control" required formControlName="title" />
+  <p *ngIf="editForm.invalid">Please add title</p>
+  <label for="content">Content</label>
+  <input type="text" class="form-control" required formControlName="content" />
+  <label for="description">Description</label>
+  <input type="text" class="form-control" formControlName="description" />
+  <div class="edit-form__buttons-wrapper">
+    <button type="submit" [disabled]="editForm.invalid">Save</button>
+    <button routerLink="/news">Cancel</button>
   </div>
 </form>

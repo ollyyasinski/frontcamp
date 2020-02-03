@@ -2,7 +2,6 @@
   <app-toolbar
     [sourceItems]="sources$ | async"
     (filterHandler)="filterArticles($event)"
-    (addArticleHandler)="addArticle($event)"
     (sourceChangeHandler)="onSourceChange($event)"
   ></app-toolbar>
   <app-news-list

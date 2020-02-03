@@ -4,9 +4,4 @@
 ></app-select-source-dropdown>
 <app-filter-form (filterInput)="onFilter($event)"></app-filter-form>
 
-<div class="created-by-me-checkbox">
-  <input type="checkbox" id="createdByMeCheckbox" name="createdByMe" />
-  <label for="createdByMe">Only created by me</label>
-</div>
-
 <button (click)="onAddArticle()" routerLink="/add">Add Article</button>

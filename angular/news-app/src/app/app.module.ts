@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -19,8 +20,8 @@ import { AddNewsComponent } from "./containers/add-news/add-news.component";
 import { FilterPipe } from "./components/filter-form/filter.pipe";
 import { NewCardsFactoryComponent } from "./components/news-list/new-cards-factory/new-cards-factory.component";
 import { HttpService } from "./services/http.service";
-import { HttpClientModule } from "@angular/common/http";
 import { ArticlesService } from "./services/articles.service";
+import { SourcesService } from "./services/sources.service";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { ArticlesService } from "./services/articles.service";
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [HttpService, ArticlesService],
+  providers: [HttpService, ArticlesService, SourcesService],
   bootstrap: [AppComponent],
   entryComponents: [NewsCardComponent]
 })
