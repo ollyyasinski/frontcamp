@@ -23,4 +23,12 @@ describe("FilterFormComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  it("should emit event on submit", () => {
+    spyOn(component.filterInput, "emit");
+
+    component.onSubmit();
+
+    expect(component.filterInput.emit).toHaveBeenCalled();
+  });
 });

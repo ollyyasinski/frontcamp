@@ -5,14 +5,10 @@ import { Component, OnInit, Output, EventEmitter } from "@angular/core";
   templateUrl: "./filter-form.component.html",
   styleUrls: ["./filter-form.component.css"]
 })
-export class FilterFormComponent implements OnInit {
+export class FilterFormComponent {
   newsItemName: string;
 
   @Output() filterInput: EventEmitter<string> = new EventEmitter();
-
-  constructor() {}
-
-  ngOnInit() {}
 
   onSubmit(): void {
     this.filterInput.emit(this.newsItemName);
