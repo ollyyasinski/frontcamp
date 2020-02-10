@@ -1,16 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
-import { FilterFormComponent } from './filter-form.component';
+import { FilterFormComponent } from "./filter-form.component";
 
-describe('FilterFormComponent', () => {
+describe("FilterFormComponent", () => {
   let component: FilterFormComponent;
   let fixture: ComponentFixture<FilterFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FilterFormComponent ]
-    })
-    .compileComponents();
+      declarations: [FilterFormComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('FilterFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
