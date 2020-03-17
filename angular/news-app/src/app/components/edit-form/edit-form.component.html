@@ -1,24 +1,13 @@
-<form>
-  <div class="edit-form__cloumn">
-    <label for="headiing">Heading</label>
-    <input type="text" class="form-control" id="heading" required />
-    <label for="description">Short Description</label>
-    <input type="text" class="form-control" id="description" />
-    <label for="content">Content</label>
-    <input type="text" class="form-control" id="content" />
-    <label for="date">Date</label>
-    <input type="text" class="form-control" id="date" />
-  </div>
-  <div class="edit-form__cloumn">
-    <label for="headiing">Image</label>
-    <input type="text" class="form-control" id="image" />
-    <label for="author">Author</label>
-    <input type="text" class="form-control" id="author" />
-    <label for="source">Source URL</label>
-    <input type="text" class="form-control" id="source" />
-    <div class="edit-form__buttons-wrapper">
-      <button type="submit">Save</button>
-      <button>Cancel</button>
-    </div>
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <label for="heading">Heading *</label>
+  <input type="text" class="form-control" required formControlName="title" />
+  <p *ngIf="editForm.invalid">Please add title</p>
+  <label for="content">Content</label>
+  <input type="text" class="form-control" required formControlName="content" />
+  <label for="description">Description</label>
+  <input type="text" class="form-control" formControlName="description" />
+  <div class="edit-form__buttons-wrapper">
+    <button type="submit" [disabled]="editForm.invalid">Save</button>
+    <button routerLink="/news">Cancel</button>
   </div>
 </form>
