@@ -39,7 +39,7 @@ export class NewsCatalogComponent implements OnInit, OnDestroy {
 
     this.initializeArticles();
 
-    this.articlesSub = this.articlesService.updateArticles.subscribe(
+    this.articlesSub = this.articlesService.updateArticles$.subscribe(
       articles$ => {
         if (articles$) {
           this.articles$ = articles$;

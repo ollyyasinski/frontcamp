@@ -1,16 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
-import { BasicLayoutComponent } from './basic-layout.component';
+import { BasicLayoutComponent } from "./basic-layout.component";
 
-describe('BasicLayoutComponent', () => {
+describe("BasicLayoutComponent", () => {
   let component: BasicLayoutComponent;
   let fixture: ComponentFixture<BasicLayoutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BasicLayoutComponent ]
-    })
-    .compileComponents();
+      declarations: [BasicLayoutComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('BasicLayoutComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

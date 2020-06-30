@@ -1,4 +1,4 @@
-import { Component, Input, Injector } from "@angular/core";
+import { Component, Input, Injector, Inject } from "@angular/core";
 import { createCustomElement } from "@angular/elements";
 import { ArticlesService } from "src/app/services/articles.service";
 import { DeleteWarningComponent } from "../../delete-warning/delete-warning.component";
@@ -19,7 +19,7 @@ export class NewsCardComponent {
   placeholderURL = "../../../../assets/placeholder.png";
 
   constructor(
-    private readonly injector: Injector,
+    @Inject(Injector) private readonly injector: Injector,
     private readonly articlesService: ArticlesService,
     private readonly warningService: DeleteWarningService
   ) {

@@ -1,16 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
-import { SelectSourceDropdownComponent } from './select-source-dropdown.component';
+import { SelectSourceDropdownComponent } from "./select-source-dropdown.component";
 
-describe('SelectSourceDropdownComponent', () => {
+describe("SelectSourceDropdownComponent", () => {
   let component: SelectSourceDropdownComponent;
   let fixture: ComponentFixture<SelectSourceDropdownComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SelectSourceDropdownComponent ]
-    })
-    .compileComponents();
+      declarations: [SelectSourceDropdownComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('SelectSourceDropdownComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

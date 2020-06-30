@@ -9,7 +9,7 @@ import { Article, ArticlePatch } from "../models/article-model";
 export class ArticlesService {
   articles$: Observable<Article[]>;
   selectedArticle$: Observable<Article>;
-  updateArticles: BehaviorSubject<Observable<Article[]>> = new BehaviorSubject(
+  updateArticles$: BehaviorSubject<Observable<Article[]>> = new BehaviorSubject(
     null
   );
 
@@ -77,7 +77,7 @@ export class ArticlesService {
   }
 
   deleteArticle(title: string): void {
-    this.updateArticles.next(null);
+    this.updateArticles$.next(null);
 
     this.articles$ = this.articles$.pipe(
       map(articles => {
@@ -90,6 +90,6 @@ export class ArticlesService {
     );
 
     this.loadArticles = false;
-    this.updateArticles.next(this.articles$);
+    this.updateArticles$.next(this.articles$);
   }
 }
